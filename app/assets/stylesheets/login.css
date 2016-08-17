@@ -1,0 +1,10 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+
+div.social-login{
+	width: 350px;
+    margin: 45px 0 20px;
+}

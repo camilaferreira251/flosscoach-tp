@@ -1,0 +1,16 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+.modal-backdrop, .modal-backdrop.in{
+	display:none;
+}
+
+.modal.in .modal-dialog {
+		z-index:9999700;
+		transform: translate(0,100px);
+	}
+
+	.dropify-wrapper input{
+		z-index:0;
+	}

@@ -1,0 +1,74 @@
+<body class="page-login-v2 layout-full page-dark">
+  <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <!-- Page -->
+        <div class="page animsition" data-animsition-in="fade-in" data-animsition-out="fade-out">
+          <div class="page-content">
+            <div class="page-brand-info">
+              <div class="brand">
+                <h2 class="brand-text font-size-40">FLOSS Coach</h2>
+              </div>
+              <p class="font-size-20">FLOSS Coach creators are researchers who want to help newcomers to Free/Libre Open Source Software (FLOSS)
+                Have you ever thought about contributing to an Open Source Project? Have you tried? Was it too hard?</p>
+                
+                <p class="font-size-20"><a href="/projects">Explore projects on Flosscoach.com (no login needed)</a></p>
+
+              </div>
+
+              <div class="page-login-main">
+                <h3 class="font-size-24">Sign Up</h3>
+                <p>Register NOW! Check our prototype and give us your feedback</p>
+
+
+
+
+                <%= form_for(User.new, url: users_login_path) do |f| %>
+                <% if alert %>
+                <div class="summary-errors alert alert-danger alert-dismissible">
+                  <button type="button" class="close" aria-label="Close" data-dismiss="alert">
+                    <span aria-hidden="true">×</span>
+                  </button>
+                  <p><%= alert %></p>
+                </div>
+                <% end %>
+
+
+
+                <div class="form-group">
+                  <label class="sr-only" for="user_email">Email</label>
+                  <input type="email" class="form-control" id="user_email" name="user[email]" placeholder="Email">
+                </div>
+                <div class="form-group">
+                  <label class="sr-only" for="user_password">Password</label>
+                  <input type="password" class="form-control" id="user_password" name="user[password]" placeholder="Password">
+                </div>
+                <%= f.submit 'Sign Up', class: 'btn btn-primary btn-block' %>
+
+                <% end %>
+                <div class='social-login'>
+                <h4>or login with...</h4>
+                 <%= link_to "/auth/facebook" do %>
+                 <button type="button" class="btn  btn-labeled social-facebook ">
+                 <span class="btn-label"><i class="icon bd-facebook" aria-hidden="true"></i></span> Facebook</button>
+                   <% end %>
+                   <%= link_to "/auth/twitter" do %>
+                   <button type="button" class="btn  btn-labeled social-twitter ">
+                    <span class="btn-label"><i class="icon bd-twitter" aria-hidden="true"></i></span>Twitter</button>
+                    <% end %>
+
+                    <%= link_to "/auth/github" do %>
+
+                    <button type="button" class="btn btn-labeled social-github">
+                      <span class="btn-label"><i class="icon bd-github" aria-hidden="true"></i></span>GitHub</button>
+
+                    </div>            <% end %>
+
+                    <hr>
+                    <p>Have account already? Please go to <%= link_to 'Sign In', new_user_path %></p>
+
+                  </div>
+                </div>
+              </div>
+
+

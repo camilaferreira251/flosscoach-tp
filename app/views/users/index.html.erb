@@ -1,0 +1,182 @@
+ <div class="page animsition page-profile">
+
+    <div class="page-content container-fluid">
+      <div class="row">
+        <div class="col-md-3">
+          <!-- Page Widget -->
+          <div class="widget widget-shadow text-center">
+            <div class="widget-header">
+              <div class="widget-header-content">
+                <a class="avatar avatar-lg" href="javascript:void(0)">
+                  <%= image_tag("5.jpg", :alt => "...") %>
+                </a>
+                <h4 class="profile-user editable">
+                  <span class='name' data-plugin="summernote" data-air-mode="true"><%= @user.name %></span>
+                  <i class="icon wb-pencil" aria-hidden="true"></i>
+                </h4>
+                <p class="editable" >
+                <span class='description' data-plugin="summernote" data-air-mode="true"> <%= @user.description.blank? ? "Insert a description" : @user.description %></span>
+                                  <i class="icon wb-pencil" aria-hidden="true"></i></p>
+                <div class="profile-social">
+                  <a class="icon bd-twitter" href="#LINK-TWITTER"></a>
+                  <a class="icon bd-facebook" href="#LINK-FACEBOOK"></a>
+                  <a class="icon bd-github" href="#LINK-GITHUB"></a>
+                </div>
+              <!--  <button type="button" class="btn btn-primary">Follow</button> -->
+              </div>
+            </div>
+            <div class="widget-footer">
+              <div class="row no-space">
+                <div class="col-xs-12">
+                  <strong class="profile-stat-count"><%= @user.projects.size %></strong>
+                  <span>Projects created</span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <!-- End Page Widget -->
+        </div>
+        <div class="col-md-9">
+          <!-- Panel -->
+          <div class="panel">
+            <div class="panel-body nav-tabs-animate nav-tabs-horizontal">
+              <ul class="nav nav-tabs nav-tabs-line" data-plugin="nav-tabs" role="tablist">
+                <li class="active" role="presentation"><a data-toggle="tab" href="#recent-activities" aria-controls="recent-activities"
+                  role="tab">Recent activities <span class="badge badge-danger">5</span></a></li>
+                <li role="presentation"><a data-toggle="tab" href="#activities-your-projects" aria-controls="activities-your-projects" role="tab">Activities in your projects </a></li>
+                <li role="presentation"><a data-toggle="tab" href="#your-projects" aria-controls="your-projects"
+                  role="tab">Your projects </a></li>
+                <li class="dropdown" role="presentation" style="display: none;">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                    <span class="caret"></span>Menu </a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li role="presentation" style="display: none;"><a data-toggle="tab" href="#recent-activities" aria-controls="recent-activities"
+                      role="tab">Recent activities <span class="badge label-danger">5</span></a></li>
+                    <li role="presentation" style="display: none;"><a data-toggle="tab" href="#activities-your-projects" aria-controls="activities-your-projects"
+                      role="tab">Activities in your projects</a></li>
+                    <li role="presentation"><a data-toggle="tab" href="#your-projets" aria-controls="your-projects"
+                      role="tab">Your projects</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <div class="tab-content">
+                <div class="tab-pane active animation-slide-left" id="recent-activities" role="tabpanel">
+                  <ul class="list-group">
+                    <li class="list-group-item">
+                      <div class="media">
+                        <div class="media-left">
+                          <a class="avatar" href="javascript:void(0)">
+                            <%= image_tag("5.jpg", :alt => "...", :class => "img-responsive") %>
+                          </a>
+                        </div>
+                        <div class="media-body">
+                          <h4 class="media-heading">Você mesmo
+                            <span>posted an updated</span>
+                          </h4>
+                          <small>14 minutes ago</small>
+                          <div class="profile-brief">Commit in #98t90r809t80ew8t. Please check it.</div>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="list-group-item">
+                      <div class="media">
+                        <div class="media-left">
+                          <a class="avatar" href="javascript:void(0)">
+                            <%= image_tag("5.jpg", :alt => "...", :class => "img-responsive") %>
+                          </a>
+                        </div>
+                        <div class="media-body">
+                          <h4 class="media-heading">Seu irmão gêmeo
+                            <span>posted an new activity comment</span>
+                          </h4>
+                          <small>active 14 minutes ago</small>
+                          <div class="profile-brief">Cras sit amet nibh libero, in gravida nulla. Nulla vel
+                            metus.</div>
+                        </div>
+                      </div>
+                    </li>
+       
+                  </ul>
+                  <a class="btn btn-block btn-default profile-readMore" href="javascript:void(0)"
+                  role="button">Show more</a>
+                </div>
+                <div class="tab-pane animation-slide-left" id="activities-your-projects" role="tabpanel">
+                  <ul class="list-group">
+                     <li class="list-group-item">
+                      <div class="media">
+                        <div class="media-left">
+                          <a class="avatar" href="javascript:void(0)">
+                            <%= image_tag("5.jpg", :alt => "...", :class => "img-responsive") %>
+                          </a>
+                        </div>
+                        <div class="media-body">
+                          <h4 class="media-heading">Você mesmo
+                            <span>posted an updated</span>
+                          </h4>
+                          <small>14 minutes ago</small>
+                          <div class="profile-brief">Commit in #98t90r809t80ew8t. Please check it.</div>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="list-group-item">
+                      <div class="media">
+                        <div class="media-left">
+                          <a class="avatar" href="javascript:void(0)">
+                            <%= image_tag("5.jpg", :alt => "...", :class => "img-responsive") %>
+                          </a>
+                        </div>
+                        <div class="media-body">
+                          <h4 class="media-heading">Seu irmão gêmeo
+                            <span>posted an new activity comment</span>
+                          </h4>
+                          <small>active 14 minutes ago</small>
+                          <div class="profile-brief">Cras sit amet nibh libero, in gravida nulla. Nulla vel
+                            metus.</div>
+                        </div>
+                      </div>
+                    </li>
+
+                  </ul>
+                </div>
+                <div class="tab-pane animation-slide-left" id="your-projects" role="tabpanel">
+                  <ul class="list-group">
+                  <% if @user.projects %>
+                       <% @user.projects.each do |project| %>
+                        <%= link_to(project) do %>
+                          <li class="list-group-item">
+                            <div class="media">
+                              <div class="media-left">
+                                <div class="avatar avatar-online">
+                                   <img src="<%= project.image_url %>" alt="<%= project.name %> image"/>
+                                </div>
+                              </div>
+                              <div class="media-body">
+                                <h4 class="media-heading">
+                                  <%= project.name %>
+                                </h4>
+                                <p>
+                                  <%= project.description %>
+                                </p>
+                              </div>
+                            </div>
+                          </li>
+                        <% end %>
+                      <% end %>
+                  <% else %>
+                <h4>Você não tem projetos cadastrados.</h4>
+
+                <% end %>
+        
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Panel -->
+        </div>
+      </div>
+    </div>
+  </div>

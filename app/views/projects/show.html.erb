@@ -1,0 +1,235 @@
+
+    <input type='hidden' name='_method' value='put'>
+
+    <div class="page-header page-header-bordered page-header-tabs">
+
+    <figure class='logo-projeto'>
+                <div class='img-responsive  center-block' style='width:300px;'>
+                  <input type="file" id="input-file-now-custom-1"
+                  data-default-file='<%= @project.image_url if @project %>' data-plugin="dropify"/>
+              </div>
+    </figure>
+    <h1  class="page-title" data-plugin="summernote" data-air-mode="true"><%= @project.name %></h1>
+    <p class='description' data-plugin="summernote" data-air-mode="true"><%= @project.description %></p>
+
+      <ul class="nav nav-tabs nav-tabs-line" data-plugin="nav-tabs" role="tablist" >
+        <li class="active">
+          <a data-toggle="tab" href="#about_aba">About</a>
+        </li>
+        <li>
+          <a data-toggle="tab"  href="#how-to-start">How to start</a>
+        </li>
+        <li>
+          <a data-toggle="tab" href="#config-workspace">Configure workspace</a>
+        </li>
+        <li>
+          <a data-toggle="tab" href="#know-code">Know the code</a>
+        </li>
+        <li>
+          <a data-toggle="tab" href="#send_contribution">Send contribution</a>
+        </li>
+       </ul>  
+   
+    </div>
+    <div class="page-content container-fluid tab-content">
+    <div class="grid-stack tab-pane animation-fade active" data-plugin="gridstack" data-gs-width="12"  id="about_aba" 
+    data-gs-animate="yes" role="tabpanel" >
+      <div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="4" data-gs-height="3">
+          <div class="grid-stack-item-content panel panel-bordered" >
+            <div class="panel-heading">
+              <h3 class="panel-title" >Links</h3>
+              <div class="panel-actions">
+              <a class="panel-action icon wb-minus" data-toggle="panel-collapse" aria-expanded="true"
+              aria-hidden="true"></a>
+              <a class="panel-action icon wb-close" data-toggle="panel-close" aria-hidden="true"></a>
+              </div>
+            </div>
+              <div id="link" class="panel-body">
+                <%= @project.link.html_safe if @project.link %>
+              </div>
+          </div>
+        </div>    
+  
+
+        <div class="grid-stack-item" data-gs-x="4" data-gs-y="0" data-gs-width="8" data-gs-height="5">
+        <div class="grid-stack-item-content panel panel-bordered">
+          <div class="panel-heading">
+            <h3 class="panel-title">About</h3>
+            <div class="panel-actions">
+            <a class="panel-action icon wb-minus" data-toggle="panel-collapse" aria-expanded="true"
+            aria-hidden="true"></a>
+            <a class="panel-action icon wb-close" data-toggle="panel-close" aria-hidden="true"></a>
+            </div>
+          </div>
+          <div id="about" class="panel-body">
+            <%= @project.about.html_safe if @project.about %>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    <div class="grid-stack  tab-pane animation-fade" data-plugin="gridstack" data-gs-width="12" id="how-to-start" 
+      data-gs-animate="yes" role="tabpanel" >
+       <div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="6" data-gs-height="4" >
+        <div class="grid-stack-item-content panel panel-bordered">
+          <div class="panel-heading">
+            <h3 class="panel-title">Technical skills required</h3>
+            <div class="panel-actions">
+            <a class="panel-action icon wb-minus" data-toggle="panel-collapse" aria-expanded="true"
+            aria-hidden="true"></a>
+            <a class="panel-action icon wb-close" data-toggle="panel-close" aria-hidden="true"></a>
+            </div>
+          </div>    
+          
+          <div id="technical_skill" class="panel-body">
+            <%= @project.technical_skill.html_safe if @project.technical_skill %>
+          </div>
+        </div>
+        
+      </div>
+       <div class="grid-stack-item" data-gs-x="6" data-gs-y="0" data-gs-width="6" data-gs-height="4">
+        <div class="grid-stack-item-content panel panel-bordered">
+          <div class="panel-heading">
+            <h3 class="panel-title">Soft skills required</h3>
+            <div class="panel-actions">
+            <a class="panel-action icon wb-minus" data-toggle="panel-collapse" aria-expanded="true"
+            aria-hidden="true"></a>
+            <a class="panel-action icon wb-close" data-toggle="panel-close" aria-hidden="true"></a>
+            </div>
+          </div>    
+          
+          <div id="soft_skill" class="panel-body">
+            <%= @project.soft_skill.html_safe  if @project.soft_skill %>
+          </div>
+        </div>
+        
+      </div>  
+
+
+      <div class="grid-stack-item" data-gs-x="0" data-gs-y="5" data-gs-width="12" data-gs-height="6" data-type="how-to-start">
+        <div class="grid-stack-item-content panel panel-bordered">
+          <div class="panel-heading">
+            <h3 class="panel-title">Basic Contribution Flow to Follow</h3>
+            <div class="panel-actions">
+            <a class="panel-action icon wb-minus" data-toggle="panel-collapse" aria-expanded="true"
+            aria-hidden="true"></a>
+            <a class="panel-action icon wb-close" data-toggle="panel-close" aria-hidden="true"></a>
+            </div>
+          </div>    
+          
+          <div id="contribution" class="panel-body">
+            <%= @project.contribution.html_safe  if @project.contribution %>
+          </div>
+        </div>
+        
+      </div>      
+    </div>
+       
+    <div class="grid-stack  tab-pane animation-fade" data-plugin="gridstack" data-gs-width="12" id="config-workspace" 
+      data-gs-animate="yes" role="tabpanel" >
+
+      <div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="5" data-gs-height="4">
+        <div class="grid-stack-item-content panel panel-bordered">
+          <div class="panel-heading">
+            <h3 class="panel-title">Workspace Setup</h3>
+            <div class="panel-actions">
+            <a class="panel-action icon wb-minus" data-toggle="panel-collapse" aria-expanded="true"
+            aria-hidden="true"></a>
+            <a class="panel-action icon wb-close" data-toggle="panel-close" aria-hidden="true"></a>
+            </div>
+          </div>    
+          
+          <div id="workspace_setup" class="panel-body">
+            <%= @project.workspace_setup.html_safe if @project.workspace_setup %>
+          </div>
+        </div>
+        
+      </div>        
+   <div class="grid-stack-item" data-gs-x="5" data-gs-y="0" data-gs-width="7" data-gs-height="5">
+        <div class="grid-stack-item-content panel panel-bordered">
+          <div class="panel-heading">
+            <h3 class="panel-title">Resources provided by the project</h3>
+            <div class="panel-actions">
+            <a class="panel-action icon wb-minus" data-toggle="panel-collapse" aria-expanded="true"
+            aria-hidden="true"></a>
+            <a class="panel-action icon wb-close" data-toggle="panel-close" aria-hidden="true"></a>
+            </div>
+          </div>    
+          
+          <div id="resource" class="panel-body">
+            <%= @project.resource.html_safe if @project.resource %>
+          </div>
+        </div>
+        
+      </div>    
+
+      </div>  
+      <div class="grid-stack  tab-pane animation-fade" data-plugin="gridstack" data-gs-width="12" id="know-code" 
+      data-gs-animate="yes" role="tabpanel" >
+
+  <div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="5" data-gs-height="4" data-type="know-code">
+        <div class="grid-stack-item-content panel panel-bordered">
+          <div class="panel-heading">
+            <h3 class="panel-title">Code documentation</h3>
+            <div class="panel-actions">
+            <a class="panel-action icon wb-minus" data-toggle="panel-collapse" aria-expanded="true"
+            aria-hidden="true"></a>
+            <a class="panel-action icon wb-close" data-toggle="panel-close" aria-hidden="true"></a>
+            </div>
+          </div>    
+          
+          <div id="documentation" class="panel-body">
+            <%= @project.documentation.html_safe if @project.documentation %>
+          </div>
+        </div>
+        
+      </div>  
+  <div class="grid-stack-item" data-gs-x="5" data-gs-y="0" data-gs-width="5" data-gs-height="4" data-type="know-code">
+        <div class="grid-stack-item-content panel panel-bordered">
+          <div class="panel-heading">
+            <h3 class="panel-title">Searchable Resources</h3>
+            <div class="panel-actions">
+            <a class="panel-action icon wb-minus" data-toggle="panel-collapse" aria-expanded="true"
+            aria-hidden="true"></a>
+            <a class="panel-action icon wb-close" data-toggle="panel-close" aria-hidden="true"></a>
+            </div>
+          </div>    
+          
+          <div id="search_resource" class="panel-body">
+            <%= @project.search_resource.html_safe if @project.search_resource %>
+          </div>
+        </div>
+        
+      </div>  
+
+    </div>
+
+      <div class="grid-stack  tab-pane animation-fade" data-plugin="gridstack" data-gs-width="12" id="send_contribution" data-gs-animate="yes" role="tabpanel" >
+
+      <div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="8" data-gs-height="4">
+        <div class="grid-stack-item-content panel panel-bordered">
+          <div class="panel-heading">
+            <h3 class="panel-title">Submitting your contribution</h3>
+            <div class="panel-actions">
+            <a class="panel-action icon wb-minus" data-toggle="panel-collapse" aria-expanded="true"
+            aria-hidden="true"></a>
+            <a class="panel-action icon wb-close" data-toggle="panel-close" aria-hidden="true"></a>
+            </div>
+          </div>    
+          
+          <div id="send_contribution" class="panel-body">
+            <%= @project.send_contribution.html_safe if @project.send_contribution %>
+          </div>
+        </div>
+        
+      </div>  
+      
+      </div>
+      
+      </div>
+      <!-- End Panel -->
+
+
+
+

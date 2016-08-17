@@ -1,0 +1,307 @@
+<% if !current_user %>
+
+<nav class="site-navbar navbar navbar-inverse navbar-fixed-top navbar-mega" role="navigation">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle hamburger hamburger-close navbar-toggle-left hided"
+      data-toggle="menubar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="hamburger-bar"></span>
+      </button>
+      <button type="button" class="navbar-toggle collapsed" data-target="#site-navbar-collapse"
+      data-toggle="collapse">
+        <i class="icon wb-more-horizontal" aria-hidden="true"></i>
+      </button>
+      <div class="navbar-brand navbar-brand-center site-gridmenu-toggle" data-toggle="gridmenu">
+        <span class="navbar-brand-text hidden-xs">Flosscoach</span>
+      </div>
+      <button type="button" class="navbar-toggle collapsed" data-target="#site-navbar-search"
+      data-toggle="collapse">
+        <span class="sr-only">Toggle Search</span>
+        <i class="icon wb-search" aria-hidden="true"></i>
+      </button>
+    </div>
+    <div class="navbar-container container-fluid">
+      <!-- Navbar Collapse -->
+      <div class="collapse navbar-collapse navbar-collapse-toolbar" id="site-navbar-collapse">
+        <!-- Navbar Toolbar -->
+        <ul class="nav navbar-toolbar">
+          <li class="hidden-float" id="toggleMenubar">
+            <a data-toggle="menubar" href="#" role="button">
+              <i class="icon hamburger hamburger-arrow-left">
+                  <span class="sr-only">Toggle menubar</span>
+                  <span class="hamburger-bar"></span>
+                </i>
+            </a>
+          </li>
+          <li class="hidden-xs" id="toggleFullscreen">
+            <a class="icon icon-fullscreen" data-toggle="fullscreen" href="#" role="button">
+              <span class="sr-only">Toggle fullscreen</span>
+            </a>
+          </li>
+          <li class="hidden-float">
+            <a class="icon wb-search" data-toggle="collapse" href="#" data-target="#site-navbar-search"
+            role="button">
+              <span class="sr-only">Toggle Search</span>
+            </a>
+          </li>
+        </ul>
+        <!-- End Navbar Toolbar -->
+
+        <!-- Navbar Toolbar Right -->
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/users/login">Sign In</a></li>
+        </ul>
+        <!-- End Navbar Toolbar Right -->
+
+      </div>
+      <!-- End Navbar Collapse -->
+      <!-- Site Navbar Seach -->
+      <div class="collapse navbar-search-overlap" id="site-navbar-search">
+        <form role="search">
+          <div class="form-group">
+            <div class="input-search">
+              <i class="input-search-icon wb-search" aria-hidden="true"></i>
+              <input type="text" class="form-control" name="site-search" placeholder="Search...">
+              <button type="button" class="input-search-close icon wb-close" data-target="#site-navbar-search"
+              data-toggle="collapse" aria-label="Close"></button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <!-- End Site Navbar Seach -->
+    </div>
+  </nav>
+
+  <div class="site-menubar">
+
+    <div class="site-menubar-body">
+      <div>
+        <div>
+
+          <ul class="site-menu">
+            <li class="site-menu-item has-sub">
+              <a href="#">
+                <i class="site-menu-icon wb-dashboard" aria-hidden="true"></i>
+                <span class="site-menu-title">Projects</span>
+              </a>
+            </li>
+            <li class="site-menu-item has-sub">
+              <a href="#">
+                <i class="site-menu-icon wb-layout" aria-hidden="true"></i>
+                <span class="site-menu-title">Groups</span>
+              </a>
+            </li>
+            <li class="site-menu-item has-sub">
+              <a href="#">
+                <i class="site-menu-icon wb-file" aria-hidden="true"></i>
+                <span class="site-menu-title">Help</span>
+              </a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+<% end %>  
+
+
+
+
+<div class="page-content">
+
+        <div class="text-center">
+          <h3>
+            Explore Flosscoach
+          </h3>
+          <p class="lead">
+            Discover projects, groups and technologies. Share your projects with others
+          </p>
+          <br>
+        </div>
+
+      <!-- Panel -->
+      <div class="panel">
+        <div class="panel-body">
+
+          <form class="page-search-form" role="search">
+            <div class="input-search input-search-dark">
+              <i class="input-search-icon wb-search" aria-hidden="true"></i>
+              <input type="text" class="form-control" id="inputSearch" name="search" placeholder="Search Projects">
+              <button type="button" class="input-search-close icon wb-close" aria-label="Close"></button>
+            </div>
+          </form>
+          <div class="nav-tabs-horizontal">
+            <div class="dropdown page-user-sortlist">
+              Order By: <a class="dropdown-toggle inline-block" data-toggle="dropdown"
+              href="#" aria-expanded="false">Last Active<span class="caret"></span></a>
+              <ul class="dropdown-menu animation-scale-up animation-top-right animation-duration-250"
+              role="menu">
+                <li class="active" role="presentation"><a href="javascript:void(0)">Last Active</a></li>
+                <li role="presentation"><a href="javascript:void(0)">Groups</a></li>
+                <li role="presentation"><a href="javascript:void(0)">Register Date</a></li>
+              </ul>
+            </div>
+            <ul class="nav nav-tabs nav-tabs-line" data-plugin="nav-tabs" role="tablist">
+              <li class="active" role="presentation"><a data-toggle="tab" href="#all_contacts" aria-controls="all_contacts"
+                role="tab">Trending</a></li>
+              <li role="presentation"><a data-toggle="tab" href="#my_contacts" aria-controls="my_contacts"
+                role="tab">Most favorites</a></li>
+              <li role="presentation"><a data-toggle="tab" href="#google_contacts" aria-controls="google_contacts"
+                role="tab">All</a></li>
+              <li class="dropdown" role="presentation">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                  <span class="caret"></span>Contacts </a>
+                <ul class="dropdown-menu" role="menu">
+                  <li role="presentation"><a data-toggle="tab" href="#all_contacts" aria-controls="all_contacts"
+                    role="tab">All Contacts</a></li>
+                  <li class="active" role="presentation"><a data-toggle="tab" href="#my_contacts" aria-controls="my_contacts"
+                    role="tab">My Contacts</a></li>
+                  <li role="presentation"><a data-toggle="tab" href="#google_contacts" aria-controls="google_contacts"
+                    role="tab">Google Contacts</a></li>
+                </ul>
+              </li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane animation-fade active" id="all_contacts" role="tabpanel">
+                <ul class="list-group">
+
+                <% @projects.each do |project| %>
+                  <%= link_to current_user ? edit_project_path(:id => project.id) : project do %>
+	                  <li class="list-group-item">
+	                    <div class="media">
+	                      <div class="media-left">
+	                        <div class="avatar avatar-online">
+	                          <img src="<%= project.image_url %>" alt="<%= project.name %> image"/>
+	                        </div>
+	                      </div>
+	                      <div class="media-body">
+	                        <h4 class="media-heading">
+	                          <%= project.name %>
+	                        </h4>
+	                        <p>
+	                          <%= project.description %>
+	                        </p>
+	                      </div>
+	                    </div>
+	                  </li>
+	                <% end %>
+                <% end %>
+
+                </ul>
+              </div>
+
+              <div class="tab-pane animation-fade" id="my_contacts" role="tabpanel">
+                <ul class="list-group">
+
+                <% @projects.each do |project| %>
+                  <%= link_to current_user ? edit_project_path(:id => project.id) : project do %>
+                    <li class="list-group-item">
+                      <div class="media">
+                        <div class="media-left">
+                          <div class="avatar avatar-online">
+                            <img src="<%= project.image_url %>" alt="<%= project.name %> image"/>
+                          </div>
+                        </div>
+                        <div class="media-body">
+                          <h4 class="media-heading">
+                            <%= project.name %>
+                          </h4>
+                          <p>
+                            <%= project.description %>
+                          </p>
+                        </div>
+                      </div>
+                    </li>
+                  <% end %>
+                <% end %>
+
+                </ul>
+              </div>
+
+              <div class="tab-pane animation-fade" id="google_contacts" role="tabpanel">
+                <ul class="list-group">
+
+                <% @projects.each do |project| %>
+                  <%= link_to current_user ? edit_project_path(:id => project.id) : project do %>
+                    <li class="list-group-item">
+                      <div class="media">
+                        <div class="media-left">
+                          <div class="avatar avatar-online">
+                            <img src="<%= project.image_url %>" alt="<%= project.name %> image"/>
+                          </div>
+                        </div>
+                        <div class="media-body">
+                          <h4 class="media-heading">
+                            <%= project.name %>
+                          </h4>
+                          <p>
+                            <%= project.description %>
+                          </p>
+                        </div>
+                      </div>
+                    </li>
+                  <% end %>
+                <% end %>
+
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- End Panel -->
+
+
+
+<% if current_user %>
+     <!-- <a  href="/projects/new"> -->
+        <button class="btn btn-floating btn-success" style="position:fixed; bottom:50px; right:20px; border-radius:50%;"
+        data-target="#createProject" data-toggle="modal">
+          <i class="icon wb-plus" aria-hidden="true"></i>
+        </button>
+    <!--  </a> -->
+
+<!-- POPUP -->
+
+  <div class="modal fade" id="createProject" aria-hidden="false" aria-labelledby="createProject"
+  role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+          <h4 class="modal-title" id="createProjectLabel">Create new project</h4>
+        </div>
+        <div class="modal-body">
+        <%= form_for(@myproject) do |f| %>
+          <div class="row">
+            <div class="col-lg-12 form-group">
+              <%= f.text_field :name , :class => "form-control", placeholder: "Name" %>
+        </div>
+        <div class="col-lg-12 form-group">
+              <%= f.text_area :description, :class => "form-control", :rows => 4, placeholder: "Description" %>
+            </div>
+            <div class="col-sm-12 pull-right">
+              <%= check_box_tag 'openhub_check' %> I want to get data from OpenHub
+              <br>
+              <%= f.submit (!@myproject.persisted? ? "Create project" : "Edit project") , :class => "btn btn-primary btn-outline" %>
+                      
+            </div>
+          <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+
+</div>
+
+
+
+

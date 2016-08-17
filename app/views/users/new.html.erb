@@ -1,0 +1,67 @@
+<body class="page-register-v2 layout-full page-dark">
+  <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+  <!-- Page -->
+  <div class="page animsition" data-animsition-in="fade-in" data-animsition-out="fade-out">
+    <div class="page-content">
+      <div class="page-brand-info">
+        <div class="brand">
+          <h2 class="brand-text font-size-40">FLOSS Coach</h2>
+        </div>
+        <p class="font-size-20">FLOSS Coach creators are researchers who want to help newcomers to Free/Libre Open Source Software (FLOSS)
+		Have you ever thought about contributing to an Open Source Project? Have you tried? Was it too hard?</p>
+      </div>
+
+      <div class="page-register-main">
+        <h3 class="font-size-24">Sign Up</h3>
+        <p>Register NOW! Check our prototype and give us your feedback</p>
+
+		<%= form_for(@user) do |f| %>
+		  <% if @user.errors.any? %>
+		  	<div class="summary-errors alert alert-danger alert-dismissible">
+              <button type="button" class="close" aria-label="Close" data-dismiss="alert">
+                <span aria-hidden="true">×</span>
+              </button>
+              <p><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</p>
+              <ul>
+	              <% @user.errors.full_messages.each do |message| %>
+			        <li data-field="summary_fullName"><%= message %></li>
+			      <% end %>
+		      </ul>
+        </div>
+		  <% end %>
+
+          <div class="form-group">
+            <label class="sr-only" for="user_name">Full Name</label>
+            <input type="text" class="form-control" id="user_name" name="user[name]" placeholder="Name">
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="user_email">Email</label>
+            <input type="email" class="form-control" id="user_email" name="user[email]" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="user_password">Password</label>
+            <input type="password" class="form-control" id="user_password" name="user[password]" placeholder="Password">
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="user_password_confirmation">Retype Password</label>
+            <input type="password" class="form-control" id="user_password_confirmation" name="user[password_confirmation]" placeholder="Confirm Password">
+          </div>
+          <div class="form-group clearfix">
+            <div class="checkbox-custom checkbox-inline checkbox-primary pull-left">
+              <input name="user[terms]" type="hidden" value="0" />
+              <input type="checkbox" value="1" name="user[terms]" id="user_terms" />
+              <label for="user_terms"></label>
+            </div>
+            <p class="margin-left-40">By clicking Sign Up, you agree to our <a href="#">Terms</a>.</p>
+          </div>
+          <%= f.submit 'Sign Up', class: 'btn btn-primary btn-block' %>
+
+		<% end %>
+
+        <p>Have account already? Please go to <%= link_to 'Sign In', users_login_path %></p>
+
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flosscoach</title>
+  <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track' => true %>
+
+  <%= csrf_meta_tags %>
+
+
+  <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
+
+	<%= javascript_include_tag 'js/modernizr' %>
+	<%= javascript_include_tag 'js/breakpoints' %>
+
+  <script>
+  Breakpoints();
+  </script>
+  
+  <style>
+  .grid-stack-item-content {
+    font-size: 14px!important;
+    text-align: left!important;
+  }
+
+  .nav-tabs-line>li>a {
+      position: relative;
+      display: block;
+      padding: 10px 10px!important;
+  }
+
+  .list-group a:hover{
+    text-decoration:none;
+  }
+
+  </style>
+
+</head>
+<body>
+
+<% if current_user %>
+
+  <%= render 'layouts/navigation' %>
+  
+  <!-- Page -->
+  <div class="page animsition">
+
+      <% if notice %><p class="alert alert-success"><%= notice %></p><% end %>
+      <% if alert %><p class="alert alert-error"><%= alert %></p><% end %>
+    
+      <%= yield %>
+
+  </div>
+  <!-- End Page -->
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="site-footer-legal">© 2016 <a href="#">Flosscoach</a></div>
+  </footer>
+
+
+  <% else %>
+
+    <%= yield %>
+
+<% end %>
+
+
+<%= javascript_include_tag 'application' %>
+<%= javascript_include_tag params[:controller] %>
+
+  <script>
+  (function(document, window, $) {
+    'use strict';
+    var Site = window.Site;
+    $(document).ready(function() {
+      Site.run();
+    });
+  })(document, window, jQuery);
+  </script>
+
+
+
+</body>
+</html>
