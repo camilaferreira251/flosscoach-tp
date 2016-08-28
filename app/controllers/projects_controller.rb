@@ -42,7 +42,9 @@ class ProjectsController < ApplicationController
   # POST /projects
   def create
     @project = current_user.projects.build(project_params)
-    if params[:openhub_check] #Se a flag pra capturar dados do openhyb estiver ativa
+
+    # If the flag pull of the openhug is on 
+    if params[:openhub_check] 
       ohp = OpenHubProject.find_by_name(@project.name).first
       @project.about = "#{ohp.description} <br>
                        <iframe src='https://www.openhub.net/p/#{ohp.vanity_url}/widgets/project_factoids_stats' 
@@ -67,7 +69,8 @@ class ProjectsController < ApplicationController
     if @project.update(project_params)
       #redirect_to @project, notice: 'Project was successfully updated.'
       respond_to do |format|
-        format.json { render :json => { :status => 'Ok', :message => 'Received'}, :status => 200 }
+        format.json { render :json => { :status => 'Ok', :message => 'Received'}, 
+        :status => 200 }
       end
     else
       render :edit
@@ -90,7 +93,10 @@ class ProjectsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def project_params
-      params.require(:project).permit(:name, :description, :project_page_url, :about, :issue, :technical_skill, :soft_skill, :contribution, :workspace_setup, :resource, :documentation, :search_resource, :link, :send_contribution, :user_id, :tool_id, :language_id, :operational_system_id)
+      params.require(:project).permit(:name, :description, :project_page_url, :about, 
+        :issue, :technical_skill, :soft_skill, :contribution, :workspace_setup, 
+        :resource, :documentation, :search_resource, :link, :send_contribution, 
+        :user_id, :tool_id, :language_id, :operational_system_id)
     end
 
     def authorize_project
