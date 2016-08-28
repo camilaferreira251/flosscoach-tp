@@ -34,12 +34,12 @@ Please feel free to use a different markup language if you do not plan to run
 
 Set environment variables:
 
-export FACEBOOK_KEY='...'
-export FACEBOOK_TOKEN='...'
-export TWITTER_KEY='...'
-export TWITTER_TOKEN='...'
-export GITHUB_KEY='...'
-export GITHUB_TOKEN='...'
-export OPENHUB_KEY='...'
+export FACEBOOK_TOKEN='fb75b437a92b0d9d6b25f356a211d115'
+export FACEBOOK_KEY='1151634901576318'
+export TWITTER_KEY='owOdmU5AV1NHEGQCBr3ve1GBJ'
+export TWITTER_TOKEN='ZDy1wJkwzVjLjKuCwmtQVcelyyH7BuNFBiK0MkuEbzGFOgjNwT' 
+export GITHUB_KEY='5a1bab9019302dbb93bc'
+export GITHUB_TOKEN='054f8d2e99e06342d25253fa222c238d5b72e29d'
+export OPENHUB_KEY='8dab7c4183d108bfc097953c5833452cc4cc57991b87f8868c702b74d2343fb4'
 export EMAIL_ADDRESS="address@mail.com"
 export EMAIL_PASS='...'
