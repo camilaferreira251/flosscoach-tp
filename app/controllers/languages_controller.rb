@@ -1,3 +1,5 @@
+# Controler of language register.
+
 class LanguagesController < ApplicationController
   before_action :set_language, only: [:show, :edit, :update, :destroy]
 
