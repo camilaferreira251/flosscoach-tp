@@ -1,3 +1,5 @@
+# Controler of operational system register.
+
 class OperationalSystemsController < ApplicationController
   before_action :set_operational_system, only: [:show, :edit, :update, :destroy]
 
