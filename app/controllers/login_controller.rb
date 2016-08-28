@@ -1,3 +1,6 @@
+# Controler of login.
+
+# Redirect user after login.
 class LoginController < ApplicationController
 	def index
 		if current_user
@@ -5,6 +8,7 @@ class LoginController < ApplicationController
 		end
   	end
 
+	# Create new user login.
 	def create
 		user = User.find_by_email(params[:user][:email])
 
@@ -18,10 +22,15 @@ class LoginController < ApplicationController
 		end
 	end
 
+	# User logout.
+
 	def logout
 		session.delete(:user_id)
 		render action: "index"
   	end
+
+  	# Search of projects for the user.
+
 	def search
 		@projects = Project.search(params[:query])
 		if request.xhr?
