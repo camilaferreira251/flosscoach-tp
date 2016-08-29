@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
-
+    # Nothing to do.
   end
 
   # GET /users/new
