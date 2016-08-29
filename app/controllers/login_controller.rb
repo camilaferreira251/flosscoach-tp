@@ -6,7 +6,7 @@ class LoginController < ApplicationController
 		if current_user
 			redirect_to projects_path
 		end
-  	end
+	end
 
 	# Create new user login.
 	def create
@@ -27,7 +27,7 @@ class LoginController < ApplicationController
 	def logout
 		session.delete(:user_id)
 		render action: "index"
-  	end
+	end
 
   	# Search of projects for the user.
 

@@ -5,7 +5,7 @@ class OmniAuthLoginController < ApplicationController
 		if current_user
 			redirect_to projects_path
 		end
-  	end
+	end
 
   	# Create a new login with omni auth.
 
