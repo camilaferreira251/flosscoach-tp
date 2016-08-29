@@ -99,6 +99,7 @@ class ProjectsController < ApplicationController
         :user_id, :tool_id, :language_id, :operational_system_id)
     end
 
+    # User need login for create a new project.
     def authorize_project
       unless current_user
         redirect_to root_path, alert: "You need to login to continue."
