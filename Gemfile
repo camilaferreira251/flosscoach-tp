@@ -26,3 +26,4 @@ gem 'bcrypt-ruby', '~> 3.0'
 gem 'react-rails'
 
 gem 'summernote-rails'
+gem 'rubocop', '~> 0.42.0', require: false
