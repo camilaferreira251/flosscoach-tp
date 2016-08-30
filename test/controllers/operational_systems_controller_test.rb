@@ -35,7 +35,8 @@ class OperationalSystemsControllerTest < ActionController::TestCase
   end
 
   test "should update operational_system" do
-    patch :update, id: @operational_system, operational_system: { name: @operational_system.name }
+    patch :update, id: @operational_system, operational_system: { 
+      name: @operational_system.name }
     assert_redirected_to operational_system_path(assigns(:operational_system))
   end
 
