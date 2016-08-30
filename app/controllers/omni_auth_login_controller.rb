@@ -4,6 +4,8 @@ class OmniAuthLoginController < ApplicationController
 	def index
 		if current_user
 			redirect_to projects_path
+		else
+			#nothing to do.
 		end
 	end
 
