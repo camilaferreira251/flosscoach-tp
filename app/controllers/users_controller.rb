@@ -10,26 +10,28 @@ class UsersController < ApplicationController
     redirect_to user_path(current_user)
   end
 
-  # GET /users/1
   def show
-    # Nothing to do.
+    @users = User.all
   end
 
   # GET /users/new
-  def new
+  def newuser
     @user = User.new
   end
 
   # GET /users/1/edit
   def edit
+    @user = User.update
   end
 
   # POST /users
+
+  
   def create
     @user = User.new(user_params)
     @user.photo_url ||= "/assets/avatar.jpeg"
     if @user.save
-      UsuarioMailer.newuser(@user).deliver
+      #UsuarioMailer.newuser(@user).deliver
       session[:user_id] = @user.id
       redirect_to projects_path
       #redirect_to @user
@@ -37,6 +39,7 @@ class UsersController < ApplicationController
       render :new
     end
   end
+
 
   # PATCH/PUT /users/1
   def update
@@ -50,13 +53,14 @@ class UsersController < ApplicationController
     end
   end
 
-  # DELETE /users/1
-  def destroy
-    @user.destroy
-    redirect_to users_url, notice: 'User was successfully destroyed.'
-  end
+  private
+    def destroy
+      @user.destroy
+      redirect_to users_url, notice: 'User was successfully destroyed.'
+    end
 
   private
+  
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = current_user
@@ -65,5 +69,5 @@ class UsersController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def user_params
       params.require(:user).permit!
+      end
     end
-end

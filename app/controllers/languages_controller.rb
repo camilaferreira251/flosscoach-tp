@@ -41,11 +41,11 @@ class LanguagesController < ApplicationController
     end
   end
 
-  # DELETE /languages/1
-  def destroy
-    @language.destroy
-    redirect_to languages_url, notice: 'Language was successfully destroyed.'
-  end
+  private
+    def destroy
+      @language.destroy
+      redirect_to languages_url, notice: 'Language was successfully destroyed.'
+    end
 
   private
     # Use callbacks to share common setup or constraints between actions.

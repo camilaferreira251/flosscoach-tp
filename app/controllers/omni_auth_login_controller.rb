@@ -24,7 +24,7 @@ class OmniAuthLoginController < ApplicationController
     redirect_to root_url
   end
 
-  # Destroy login with omni auth and redrect for index.
+  # Destroy login with omni auth and redirect for index.
 
   def destroy
     session.delete(:user_id)

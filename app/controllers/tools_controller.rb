@@ -41,11 +41,11 @@ class ToolsController < ApplicationController
     end
   end
 
-  # DELETE /tools/1
-  def destroy
-    @tool.destroy
-    redirect_to tools_url, notice: 'Tool was successfully destroyed.'
-  end
+  private
+    def destroy
+      @tool.destroy
+      redirect_to tools_url, notice: 'Tool was successfully destroyed.'
+    end
 
   private
     # Use callbacks to share common setup or constraints between actions.
