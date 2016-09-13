@@ -1,4 +1,8 @@
-# Controler of login.
+########################################
+# File:login_controler.rb
+# Porpose: Controler of login.
+# GNU AGPLv3
+########################################
 
 # Redirect user after login.
 class LoginController < ApplicationController
