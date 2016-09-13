@@ -1,4 +1,8 @@
-# Controler of language register.
+########################################
+# File:languages_controler.rb
+# Porpose: Controler of language register.
+# GNU AGPLv3
+########################################
 
 class LanguagesController < ApplicationController
   before_action :set_language, only: [:show, :edit, :update, :destroy]
