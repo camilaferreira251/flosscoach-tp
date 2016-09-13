@@ -1,4 +1,8 @@
-# Controler of all aplication.
+########################################
+# File:aplication_controler.rb
+# Porpose: Controler of all aplication.
+# GNU AGPLv3
+########################################
 
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
