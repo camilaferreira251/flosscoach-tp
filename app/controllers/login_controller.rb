@@ -20,7 +20,6 @@ class LoginController < ApplicationController
     if user && user.valid_password?(params[:user][:password])
       session[:user_id] = user.id
       redirect_to projects_path
-      # redirect_to @user
     else
       flash.now[:alert] = "Invalid e-mail or password."
       render action: "index"

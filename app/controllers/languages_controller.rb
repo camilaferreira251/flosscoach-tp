@@ -5,6 +5,7 @@
 ########################################
 
 class LanguagesController < ApplicationController
+  #assert language methods
   before_action :set_language, only: [:show, :edit, :update, :destroy]
 
   # GET /languages

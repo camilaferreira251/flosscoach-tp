@@ -1,6 +1,7 @@
 # Controler of project register.
 
 class ProjectsController < ApplicationController
+  #assert project methods
   before_action :set_project, only: [:show, :edit, :update, :destroy]
   before_filter :authorize_project, only: [:new, :create, :edit, :update, :destroy]
   skip_before_filter :verify_authenticity_token, only: [:update]

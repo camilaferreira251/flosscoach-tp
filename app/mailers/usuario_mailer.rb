@@ -9,7 +9,7 @@ class UsuarioMailer < ApplicationMailer
     @greeting = "Hi"
     @newuser = user
     @name = user.name
-    @link = "http://"
+    @link = "http://localhost:3000"
 
     mail to: @newuser.email, subject: "New user"
   end
