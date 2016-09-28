@@ -1,5 +1,7 @@
 # Controler of tools register.
 
+logger = Logger.new('logfile.log')
+
 class ToolsController < ApplicationController
   #assert tools methods
   before_action :set_tool, only: [:show, :edit, :update, :destroy]
@@ -17,6 +19,7 @@ class ToolsController < ApplicationController
   def new
     @tool = Tool.new
   end
+  logger.info('new'){"New tool created"}
 
   # GET /tools/1/edit
   def edit
@@ -32,6 +35,7 @@ class ToolsController < ApplicationController
       render :new
     end
   end
+  logger.info('create'){"New tool created"}
 
   # PATCH/PUT /tools/1
   def update
@@ -41,12 +45,14 @@ class ToolsController < ApplicationController
       render :edit
     end
   end
+  logger.info('update'){"Toll updated"}
 
   private
     def destroy
       @tool.destroy
       redirect_to tools_url, notice: 'Tool was successfully destroyed.'
     end
+  logger.info('destroy'){"Toll destroyed"}
 
   private
     # Use callbacks to share common setup or constraints between actions.
