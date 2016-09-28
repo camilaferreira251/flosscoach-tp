@@ -1,5 +1,7 @@
 # Controler of operational system register.
 
+logger = Logger.new('logfile.log')
+
 class OperationalSystemsController < ApplicationController
   before_action :set_operational_system, only: [:show, :edit, :update, :destroy]
 
@@ -16,6 +18,7 @@ class OperationalSystemsController < ApplicationController
   def new
     @operational_system = OperationalSystem.new
   end
+  logger.info('new'){"New operational system created"}
 
   # GET /operational_systems/1/edit
   def edit
@@ -32,6 +35,7 @@ class OperationalSystemsController < ApplicationController
       render :new
     end
   end
+  logger.info('create'){"New operational system created"}
 
   # PATCH/PUT /operational_systems/1
   def update
@@ -42,6 +46,7 @@ class OperationalSystemsController < ApplicationController
       render :edit
     end
   end
+  logger.info('update'){"Operational system updated"}
 
   # DELETE /operational_systems/1
   def destroy
@@ -49,6 +54,7 @@ class OperationalSystemsController < ApplicationController
     redirect_to operational_systems_url, 
     notice: 'Operational system was successfully destroyed.'
   end
+  logger.info('destroy'){"Operational system destroyed"}
 
   private
     # Use callbacks to share common setup or constraints between actions.
