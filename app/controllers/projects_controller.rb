@@ -93,6 +93,22 @@ class ProjectsController < ApplicationController
       #@project = current_user.projects.find(params[:id])
     end
 
+    # Varialbles declaration
+    @name = "name"
+    @project_description = "description"
+    @project_page_url = "url"
+    @about = "about"
+    @project_issues = "issues"
+    @technical_skill = "technical"
+    @soft_skill = "soft"
+    @contribution_flow = "flow"
+    @workspace_setup = "workspace"
+    @resource = "resource"
+    @documentation = "documentation"
+    @search_resource = "search"
+    @link = "link"
+    @send_contribution = "send"
+
     # Only allow a trusted parameter "white list" through.
     def project_params
       params.require(:project).permit(:name, :project_description, :project_page_url, :about, 
@@ -101,7 +117,7 @@ class ProjectsController < ApplicationController
         :user_id, :tool_id, :language_id, :operational_system_id)
     end
 
-    # User need login for create a new project.
+      # User need login for create a new project.
     def authorize_project
       unless current_user
         redirect_to root_path, alert: "You need to login to continue."
