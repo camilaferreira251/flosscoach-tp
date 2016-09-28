@@ -52,6 +52,6 @@ Gemfile.lock/
 public/system/
 # Ignore application configuration
 /config/application.yml
-
+/logfile.log
 #Ignoring coverage
 coverage

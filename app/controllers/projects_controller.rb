@@ -1,5 +1,7 @@
 # Controler of project register.
 
+logger = Logger.new('logfile.log')
+
 class ProjectsController < ApplicationController
   #assert project methods
   before_action :set_project, only: [:show, :edit, :update, :destroy]
@@ -32,6 +34,7 @@ class ProjectsController < ApplicationController
     @tools = Tool.all
     @operationalsystems = OperationalSystem.all
   end
+  logger.info('new'){"New project created"}
 
   # GET /projects/1/edit
   def edit
@@ -40,6 +43,7 @@ class ProjectsController < ApplicationController
     @tool = Tool.where(:id => @project.tool_id).first
     @operationalsystem = OperationalSystem.where(:id => @project.operational_system_id).first
   end
+  logger.info('edit'){"Project edited"}
 
   # POST /projects
   def create
@@ -65,7 +69,8 @@ class ProjectsController < ApplicationController
       render :new
     end
   end
-
+  logger.info('create'){"New project created"}
+  
   # PATCH/PUT /projects/1
   def update
     if @project.update(project_params)
@@ -78,13 +83,14 @@ class ProjectsController < ApplicationController
       render :edit
     end
   end
-
+  logger.info('update'){"Project updated"}
+  
   # DELETE /projects/1
   def destroy
     @project.destroy
     redirect_to projects_url, notice: 'Project was successfully destroyed.'
   end
-
+  logger.info('destroy'){"Project destroyed"}
 
   private
     # Use callbacks to share common setup or constraints between actions.
