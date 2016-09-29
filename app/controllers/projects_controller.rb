@@ -53,7 +53,8 @@ class ProjectsController < ApplicationController
     if params[:openhub_check] 
       ohp = OpenHubProject.find_by_name(@project.name).first
       @project.about = "#{ohp.description} <br>
-                       <iframe src='https://www.openhub.net/p/#{ohp.vanity_url}/widgets/project_factoids_stats' 
+                       <iframe src='https://www.openhub.net/p/#{ohp.vanity_url}
+                       /widgets/project_factoids_stats' 
                        scrolling='no' marginheight='0' marginwidth='0' 
                        style='height: 220px; width: 370px; border: none'></iframe>" 
       @project.image_url = ohp.medium_logo_url
@@ -117,9 +118,10 @@ class ProjectsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def project_params
-      params.require(:project).permit(:name, :project_description, :project_page_url, :about, 
-        :project_issues, :technical_skill, :soft_skill, :contribution_flow, :workspace_setup, 
-        :resource, :documentation, :search_resource, :link, :send_contribution, 
+      params.require(:project).permit(:name, :project_description, 
+        :project_page_url, :about, :project_issues, :technical_skill, 
+        :soft_skill, :contribution_flow, :workspace_setup, :resource, 
+        :documentation, :search_resource, :link, :send_contribution, 
         :user_id, :tool_id, :language_id, :operational_system_id)
     end
 
