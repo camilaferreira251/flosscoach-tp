@@ -58,6 +58,7 @@ class LanguagesController < ApplicationController
     @language = Language.find(params[:id])
   end
 
+  @name = "language"
     # Only allow a trusted parameter "white list" through.
   def language_params
     params.require(:language).permit(:name) #define params of language.
