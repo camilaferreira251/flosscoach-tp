@@ -1,4 +1,8 @@
-# Controler of project register.
+########################################
+# File:aplication_controler.rb
+# Porpose: Controler of projects
+# GNU AGPLv3
+########################################
 
 logger = Logger.new('logfile.log')
 

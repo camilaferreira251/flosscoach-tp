@@ -1,4 +1,8 @@
-# Controler of tools register.
+########################################
+# File:aplication_controler.rb
+# Porpose: Controler of tools
+# GNU AGPLv3
+########################################
 
 logger = Logger.new('logfile.log')
 
