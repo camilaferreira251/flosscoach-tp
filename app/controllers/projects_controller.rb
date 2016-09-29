@@ -66,6 +66,9 @@ class ProjectsController < ApplicationController
                         Homepage Url: <a href='#{ohp.homepage_url}'>#{ohp.homepage_url}</a><br>
                         Download URL: <a href='#{ohp.download_url}'>#{ohp.download_url}</a>" 
     end
+    else
+      # nothing to do
+    end
     @project.image_url ||= "assets/placeholder.png"
 
     if @project.save
