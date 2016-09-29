@@ -1,5 +1,5 @@
 ########################################
-# File:aplication_controler.rb
+# File: omni_auth_login_controller.rb
 # Porpose: Controler of omni auth login
 # GNU AGPLv3
 ########################################

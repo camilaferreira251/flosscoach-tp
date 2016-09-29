@@ -1,3 +1,8 @@
+########################################
+# File:usuario_mailer.rb
+# Porpose: Mailer that help send emails.
+# GNU AGPLv3
+########################################
 class UsuarioMailer < ApplicationMailer
 	default from: ENV["EMAIL_ADDRESS"]
   # Subject can be set in your I18n file at config/locales/en.yml

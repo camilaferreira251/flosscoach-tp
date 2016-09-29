@@ -1,5 +1,5 @@
 ########################################
-# File:aplication_controler.rb
+# File:projects_controller.rb
 # Porpose: Controler of projects
 # GNU AGPLv3
 ########################################

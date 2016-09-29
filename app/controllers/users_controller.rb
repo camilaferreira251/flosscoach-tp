@@ -1,5 +1,5 @@
 ########################################
-# File:aplication_controler.rb
+# File:users_controller.rb
 # Porpose: Controler of user registe.
 # GNU AGPLv3
 ########################################
