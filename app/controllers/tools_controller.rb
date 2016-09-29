@@ -30,7 +30,8 @@ class ToolsController < ApplicationController
     @tool = Tool.new(tool_params)
 
     if @tool.save
-      redirect_to @tool, notice: 'Tool was successfully created.'
+      redirect_to @tool, 
+      notice: 'Tool was successfully created.'
     else
       render :new
     end
@@ -40,7 +41,8 @@ class ToolsController < ApplicationController
   # PATCH/PUT /tools/1
   def update
     if @tool.update(tool_params)
-      redirect_to @tool, notice: 'Tool was successfully updated.'
+      redirect_to @tool, 
+      notice: 'Tool was successfully updated.'
     else
       render :edit
     end
@@ -50,7 +52,8 @@ class ToolsController < ApplicationController
   private
     def destroy
       @tool.destroy
-      redirect_to tools_url, notice: 'Tool was successfully destroyed.'
+      redirect_to tools_url, 
+      notice: 'Tool was successfully destroyed.'
     end
   logger.info('destroy'){"Toll destroyed"}
 
