@@ -40,6 +40,7 @@ class OperationalSystemsController < ApplicationController
     end
   end
   logger.info('create'){"New operational system created"}
+  OperationalSystem.create(name: "Ubuntu").valid?
 
   # PATCH/PUT /operational_systems/1
   def update
