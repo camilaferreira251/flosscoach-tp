@@ -37,6 +37,8 @@ class LanguagesController < ApplicationController
     end
   end
 
+  Language.create(name: "Ruby").valid?
+
   # PATCH/PUT /languages/1
   def update
     if @language.update(language_params)
