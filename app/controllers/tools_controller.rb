@@ -41,6 +41,7 @@ class ToolsController < ApplicationController
     end
   end
   logger.info('create'){"New tool created"}
+  Tool.create(name: "Rubocop").valid?
 
   # PATCH/PUT /tools/1
   def update
