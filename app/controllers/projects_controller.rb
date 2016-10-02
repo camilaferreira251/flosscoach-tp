@@ -1,4 +1,8 @@
-# Controler of project register.
+########################################
+# File:projects_controller.rb
+# Porpose: Controler of projects
+# GNU AGPLv3
+########################################
 
 logger = Logger.new('logfile.log')
 
@@ -61,6 +65,9 @@ class ProjectsController < ApplicationController
       @project.link =  "OpenHub URL: <a href='#{ohp.html_url}'>#{ohp.html_url}</a><br>
                         Homepage Url: <a href='#{ohp.homepage_url}'>#{ohp.homepage_url}</a><br>
                         Download URL: <a href='#{ohp.download_url}'>#{ohp.download_url}</a>" 
+    end
+    else
+      # nothing to do
     end
     @project.image_url ||= "assets/placeholder.png"
 

@@ -1,4 +1,8 @@
-# Controler of user register.
+########################################
+# File:users_controller.rb
+# Porpose: Controler of user registe.
+# GNU AGPLv3
+########################################
 
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :update, :destroy]

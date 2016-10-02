@@ -1,4 +1,8 @@
-# Controler of login with omni auth.
+########################################
+# File: omni_auth_login_controller.rb
+# Porpose: Controler of omni auth login
+# GNU AGPLv3
+########################################
 
 class OmniAuthLoginController < ApplicationController
   def index

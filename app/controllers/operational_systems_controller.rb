@@ -1,4 +1,8 @@
-# Controler of operational system register.
+########################################
+# File:operational_systems_controller.rb
+# Porpose: Controler of all operational systems
+# GNU AGPLv3
+########################################
 
 logger = Logger.new('logfile.log')
 
