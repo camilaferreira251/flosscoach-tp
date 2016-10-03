@@ -3,7 +3,6 @@
 # Porpose: Controler of login.
 # GNU AGPLv3
 ########################################
-
 # Redirect user after login.
 class LoginController < ApplicationController
   def index
@@ -21,15 +20,15 @@ class LoginController < ApplicationController
       session[:user_id] = user.id
       redirect_to projects_path
     else
-      flash.now[:alert] = "Invalid e-mail or password."
-      render action: "index"
+      flash.now[:alert] = 'Invalid e-mail or password.'
+      render action: 'index'
     end
   end
 
   # User logout.
   def logout
     session.delete(:user_id)
-    render action: "index"
+    render action: 'index'
   end
 
   # Search of projects for the user.

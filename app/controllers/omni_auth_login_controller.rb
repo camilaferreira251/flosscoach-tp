@@ -3,20 +3,19 @@
 # Porpose: Controler of omni auth login
 # GNU AGPLv3
 ########################################
-
 class OmniAuthLoginController < ApplicationController
   def index
     if current_user
       redirect_to projects_path
     else
-      #nothing to do.
+      # nothing to do.
     end
   end
 
   # Create a new login with omni auth.
 
   def create
-    auth = request.env["omniauth.auth"]
+    auth = request.env['omniauth.auth']
     user = User.find_or_create_with_omniauth(auth)
     session[:user_id] = user.id
     redirect_to projects_path
@@ -32,6 +31,6 @@ class OmniAuthLoginController < ApplicationController
 
   def destroy
     session.delete(:user_id)
-    render action: "index"
+    render action: 'index'
   end
 end

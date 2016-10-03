@@ -23,7 +23,7 @@ class ToolsController < ApplicationController
   def new
     @tool = Tool.new
   end
-  logger.info('new'){"New tool created"}
+  logger.info('new'){'New tool created'}
 
   # GET /tools/1/edit
   def edit
@@ -35,32 +35,32 @@ class ToolsController < ApplicationController
 
     if @tool.save
       redirect_to @tool, 
-      notice: 'Tool was successfully created.'
+                  notice: 'Tool was successfully created.'
     else
       render :new
     end
   end
-  logger.info('create'){"New tool created"}
-  Tool.create(name: "Rubocop").valid?
+  logger.info('create'){'New tool created'}
+  Tool.create(name: 'Rubocop').valid?
 
   # PATCH/PUT /tools/1
   def update
     if @tool.update(tool_params)
       redirect_to @tool, 
-      notice: 'Tool was successfully updated.'
+                  notice: 'Tool was successfully updated.'
     else
       render :edit
     end
   end
-  logger.info('update'){"Toll updated"}
+  logger.info('update'){'Toll updated'}
 
   private
     def destroy
       @tool.destroy
       redirect_to tools_url, 
-      notice: 'Tool was successfully destroyed.'
+                  notice: 'Tool was successfully destroyed.'
     end
-  logger.info('destroy'){"Toll destroyed"}
+  logger.info('destroy'){'Toll destroyed'}
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -68,9 +68,9 @@ class ToolsController < ApplicationController
       @tool = Tool.find(params[:id])
     end
 
-    @name = "tool"
-    # Only allow a trusted parameter "white list" through.
+    @name = 'tool'
+    # Only allow a trusted parameter 'white list' through.
     def tool_params
-      params.require(:tool).permit(:name) #Define params of tools
+      params.require(:tool).permit(:name) # Define params of tools
     end
 end

@@ -18,7 +18,7 @@ class ProjectsController < ApplicationController
     if current_user
       @myproject = current_user.projects.build
     else
-      @myproject = Project.all.search("nenhum")
+      @myproject = Project.all.search('nenhum')
     end
   end
 
@@ -38,7 +38,7 @@ class ProjectsController < ApplicationController
     @tools = Tool.all
     @operationalsystems = OperationalSystem.all
   end
-  logger.info('new'){"New project created"}
+  logger.info('new'){'New project created'}
 
   # GET /projects/1/edit
   def edit
@@ -47,7 +47,7 @@ class ProjectsController < ApplicationController
     @tool = Tool.where(:id => @project.tool_id).first
     @operationalsystem = OperationalSystem.where(:id => @project.operational_system_id).first
   end
-  logger.info('edit'){"Project edited"}
+  logger.info('edit'){'Project edited'}
 
   # POST /projects
   def create
@@ -60,16 +60,15 @@ class ProjectsController < ApplicationController
                        <iframe src='https://www.openhub.net/p/#{ohp.vanity_url}
                        /widgets/project_factoids_stats' 
                        scrolling='no' marginheight='0' marginwidth='0' 
-                       style='height: 220px; width: 370px; border: none'></iframe>" 
+                       style='height: 220px; width: 370px; border: none'></iframe>"
       @project.image_url = ohp.medium_logo_url
       @project.link =  "OpenHub URL: <a href='#{ohp.html_url}'>#{ohp.html_url}</a><br>
                         Homepage Url: <a href='#{ohp.homepage_url}'>#{ohp.homepage_url}</a><br>
-                        Download URL: <a href='#{ohp.download_url}'>#{ohp.download_url}</a>" 
-    end
+                        Download URL: <a href='#{ohp.download_url}'>#{ohp.download_url}</a>"
     else
       # nothing to do
     end
-    @project.image_url ||= "assets/placeholder.png"
+    @project.image_url ||= 'assets/placeholder.png'
 
     if @project.save
       redirect_to @project, notice: 'Project was successfully created.'
@@ -77,7 +76,7 @@ class ProjectsController < ApplicationController
       render :new
     end
   end
-  logger.info('create'){"New project created"}
+  logger.info('create'){'New project created'}
   
   # PATCH/PUT /projects/1
   def update
@@ -91,14 +90,14 @@ class ProjectsController < ApplicationController
       render :edit
     end
   end
-  logger.info('update'){"Project updated"}
+  logger.info('update'){'Project updated'}
   
   # DELETE /projects/1
   def destroy
     @project.destroy
     redirect_to projects_url, notice: 'Project was successfully destroyed.'
   end
-  logger.info('destroy'){"Project destroyed"}
+  logger.info('destroy'){'Project destroyed'}
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -108,22 +107,22 @@ class ProjectsController < ApplicationController
     end
 
     # Varialbles declaration
-    @name = "name"
-    @project_description = "description"
-    @project_page_url = "url"
-    @about = "about"
-    @project_issues = "issues"
-    @technical_skill = "technical"
-    @soft_skill = "soft"
-    @contribution_flow = "flow"
-    @workspace_setup = "workspace"
-    @resource = "resource"
-    @documentation = "documentation"
-    @search_resource = "search"
-    @link = "link"
-    @send_contribution = "send"
+    @name = 'name'
+    @project_description = 'description'
+    @project_page_url = 'url'
+    @about = 'about'
+    @project_issues = 'issues'
+    @technical_skill = 'technical'
+    @soft_skill = 'soft'
+    @contribution_flow = 'flow'
+    @workspace_setup = 'workspace'
+    @resource = 'resource'
+    @documentation = 'documentation'
+    @search_resource = 'search'
+    @link = 'link'
+    @send_contribution = 'send'
 
-    # Only allow a trusted parameter "white list" through.
+    # Only allow a trusted parameter 'white list' through.
     def project_params
       params.require(:project).permit(:name, :project_description, 
         :project_page_url, :about, :project_issues, :technical_skill, 
@@ -135,7 +134,7 @@ class ProjectsController < ApplicationController
       # User need login for create a new project.
     def authorize_project
       unless current_user
-        redirect_to root_path, alert: "You need to login to continue."
+        redirect_to root_path, alert: 'You need to login to continue.'
       end
     end
 end

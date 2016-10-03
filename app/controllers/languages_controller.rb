@@ -3,7 +3,6 @@
 # Porpose: Controler of language register.
 # GNU AGPLv3
 ########################################
-
 class LanguagesController < ApplicationController
   #assert language methods
   before_action :set_language, only: [:show, :edit, :update, :destroy]
@@ -37,7 +36,7 @@ class LanguagesController < ApplicationController
     end
   end
 
-  Language.create(name: "Ruby").valid?
+  Language.create(name: 'Ruby').valid?
 
   # PATCH/PUT /languages/1
   def update
@@ -55,14 +54,15 @@ class LanguagesController < ApplicationController
     end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-  def set_language
-    @language = Language.find(params[:id])
-  end
 
-  @name = "language"
-    # Only allow a trusted parameter "white list" through.
-  def language_params
-    params.require(:language).permit(:name) #define params of language.
-  end
+    # Use callbacks to share common setup or constraints between actions.
+    def set_language
+      @language = Language.find(params[:id])
+    end
+
+    @name = 'language'
+    # Only allow a trusted parameter 'white list' through.
+    def language_params
+      params.require(:language).permit(:name) # define params of language.
+    end
 end

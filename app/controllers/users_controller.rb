@@ -8,7 +8,6 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :update, :destroy]
   skip_before_filter :verify_authenticity_token, only: [:update]
 
-
   # GET /users
   def index
     redirect_to user_path(current_user)
@@ -29,11 +28,9 @@ class UsersController < ApplicationController
   end
 
   # POST /users
-
-  
   def create
     @user = User.new(user_params)
-    @user.photo_url ||= "/assets/avatar.jpeg"
+    @user.photo_url ||= '/assets/avatar.jpeg'
     if @user.save
       #UsuarioMailer.newuser(@user).deliver
       session[:user_id] = @user.id
@@ -44,10 +41,8 @@ class UsersController < ApplicationController
     end
   end
 
-
   # PATCH/PUT /users/1
   def update
-
     if @user.update_attributes(user_params)
       respond_to do |format|
         format.json { render :json => { :status => 'Ok', :message => 'Received'}, :status => 200 }
@@ -64,13 +59,13 @@ class UsersController < ApplicationController
     end
 
   private
-  
+
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = current_user
     end
 
-    # Only allow a trusted parameter "white list" through.
+    # Only allow a trusted parameter 'white list' through.
     def user_params
       params.require(:user).permit!
       end

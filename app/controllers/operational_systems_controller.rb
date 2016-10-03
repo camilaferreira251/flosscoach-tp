@@ -22,7 +22,7 @@ class OperationalSystemsController < ApplicationController
   def new
     @operational_system = OperationalSystem.new
   end
-  logger.info('new'){"New operational system created"}
+  logger.info('new'){'New operational system created'}
 
   # GET /operational_systems/1/edit
   def edit
@@ -39,8 +39,8 @@ class OperationalSystemsController < ApplicationController
       render :new
     end
   end
-  logger.info('create'){"New operational system created"}
-  OperationalSystem.create(name: "Ubuntu").valid?
+  logger.info('create'){'New operational system created'}
+  OperationalSystem.create(name: 'Ubuntu').valid?
 
   # PATCH/PUT /operational_systems/1
   def update
@@ -51,15 +51,15 @@ class OperationalSystemsController < ApplicationController
       render :edit
     end
   end
-  logger.info('update'){"Operational system updated"}
+  logger.info('update'){'Operational system updated'}
 
   # DELETE /operational_systems/1
   def destroy
     @operational_system.destroy
     redirect_to operational_systems_url, 
-    notice: 'Operational system was successfully destroyed.'
+                notice: 'Operational system was successfully destroyed.'
   end
-  logger.info('destroy'){"Operational system destroyed"}
+  logger.info('destroy'){'Operational system destroyed'}
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -67,7 +67,7 @@ class OperationalSystemsController < ApplicationController
       @operational_system = OperationalSystem.find(params[:id])
     end
 
-    # Only allow a trusted parameter "white list" through.
+    # Only allow a trusted parameter 'white list' through.
     def operational_system_params
       params.require(:operational_system).permit(:name)
     end
