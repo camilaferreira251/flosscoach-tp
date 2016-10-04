@@ -5,7 +5,11 @@
 ########################################
 
 class UsersController < ApplicationController
+
+  # Indicates methods need set for controller work
   before_action :set_user, only: [:show, :update, :destroy]
+
+  # Validate token if user are updated
   skip_before_filter :verify_authenticity_token, only: [:update]
 
   # GET /users
