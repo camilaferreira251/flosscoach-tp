@@ -1,3 +1,9 @@
+########################################
+# File: project.rb
+# Porpose: Indicates all relationships with project
+# GNU AGPLv3
+########################################
+
 class Project < ActiveRecord::Base
 
   belongs_to :languages 
