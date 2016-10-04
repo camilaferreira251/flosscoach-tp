@@ -1,13 +1,25 @@
 require "bcrypt"
 
 class User < ActiveRecord::Base
+	# Indicates users can have many projects associated
 	has_many :projects
 	
+	# Validate atributes email and name
 	validates_presence_of :email, :name
+
+	# Validate atribute password
 	validates_presence_of :password,  :if => :password
+
+	# Validate if email is one
 	validates_uniqueness_of :email
+
+	# Validate the lenth of the atribute password
 	validates_length_of :password, minimum: 6, :if => :password
+
+	#Validates if confirmation passwor is equal password 
 	validates_confirmation_of :password, :if => :password
+
+	# Validate if terms are acepted
 	validates_acceptance_of :terms
 
 	def password=(new_password)
