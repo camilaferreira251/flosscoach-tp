@@ -6,9 +6,16 @@
 
 class Project < ActiveRecord::Base
 
+  # Indicates project belongs to languages
   belongs_to :languages 
+
+  # Indicates project belongs to operational system
   belongs_to :operational_systems 
+
+  # Indicates project belongs to tools
   belongs_to :tools
+
+  # Indicates project belongs to users
   belongs_to :users
 
   # Search for a project by name
