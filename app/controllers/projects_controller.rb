@@ -107,20 +107,20 @@ class ProjectsController < ApplicationController
     end
 
     # Varialbles declaration
-    @name = 'name'
-    @project_description = 'description'
-    @project_page_url = 'url'
-    @about = 'about'
-    @project_issues = 'issues'
-    @technical_skill = 'technical'
-    @soft_skill = 'soft'
-    @contribution_flow = 'flow'
-    @workspace_setup = 'workspace'
-    @resource = 'resource'
-    @documentation = 'documentation'
-    @search_resource = 'search'
-    @link = 'link'
-    @send_contribution = 'send'
+    @name = 'name' # Name of project
+    @project_description = 'description' # Description of the project
+    @project_page_url = 'url' # Url of the project 
+    @about = 'about' # About of the project
+    @project_issues = 'issues' # Issues of project
+    @technical_skill = 'technical' # Technical skils required for desenvolve project
+    @soft_skill = 'soft' # Soft skills required for desenvolve project
+    @contribution_flow = 'flow' # Cntributin flow for project
+    @workspace_setup = 'workspace' # How setup workspace of the project
+    @resource = 'resource' # Resources of the project
+    @documentation = 'documentation' # Documentation of the project
+    @search_resource = 'search' # Where you can search resources os the project
+    @link = 'link' # Link of the project
+    @send_contribution = 'send' # How send contribution to project
 
     # Only allow a trusted parameter 'white list' through.
     def project_params
