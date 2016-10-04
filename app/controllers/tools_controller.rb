@@ -68,7 +68,8 @@ class ToolsController < ApplicationController
       @tool = Tool.find(params[:id])
     end
 
-    @name = 'tool'
+    @name = 'tool' # Name of the tool
+
     # Only allow a trusted parameter 'white list' through.
     def tool_params
       params.require(:tool).permit(:name) # Define params of tools
