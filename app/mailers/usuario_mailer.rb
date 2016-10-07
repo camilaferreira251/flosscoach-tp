@@ -3,6 +3,8 @@
 # Porpose: Mailer that help send emails.
 # GNU AGPLv3
 ########################################
+
+# class that sets an mailer to users of app
 class UsuarioMailer < ApplicationMailer
 	default from: ENV["EMAIL_ADDRESS"]
   # Subject can be set in your I18n file at config/locales/en.yml
