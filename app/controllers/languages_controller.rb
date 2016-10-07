@@ -28,7 +28,8 @@ class LanguagesController < ApplicationController
   # POST /languages
   def create
     @language = Language.new(language_params)
-
+    #Create a new language, put notice for user or user redirect user for 
+    #register a new language in case language not saved.
     if @language.save
       redirect_to @language, notice: 'Language was successfully created.'
     else
