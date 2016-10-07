@@ -12,7 +12,7 @@ class ProjectsController < ApplicationController
   before_filter :authorize_project, only: [:new, :create, :edit, :update, :destroy]
   skip_before_filter :verify_authenticity_token, only: [:update]
 
-  # GET /projects
+  # Impress all projects
   def index
     @projects = Project.all.search(params[:search])
     if current_user
@@ -22,7 +22,7 @@ class ProjectsController < ApplicationController
     end
   end
 
-  # GET /projects/1
+  # Impress the project 
   def show
     @codigourl = params[:id]
     @language = Language.where(:id => @project.language_id).first
@@ -31,7 +31,7 @@ class ProjectsController < ApplicationController
       :id => @project.operational_system_id).first
   end
 
-  # GET /projects/new
+  # Create a new project
   def new
     @project = current_user.projects.build
     @languages = Language.all
@@ -40,7 +40,7 @@ class ProjectsController < ApplicationController
   end
   logger.info('new'){'New project created'}
 
-  # GET /projects/1/edit
+  # Edit project
   def edit
     @codigourl = params[:id]
     @language = Language.where(:id => @project.language_id).first
@@ -49,7 +49,7 @@ class ProjectsController < ApplicationController
   end
   logger.info('edit'){'Project edited'}
 
-  # POST /projects
+  # Create new project 
   def create
     @project = current_user.projects.build(project_params)
 
@@ -78,7 +78,7 @@ class ProjectsController < ApplicationController
   end
   logger.info('create'){'New project created'}
   
-  # PATCH/PUT /projects/1
+  # Update a project
   def update
     if @project.update(project_params)
       #redirect_to @project, notice: 'Project was successfully updated.'
@@ -92,7 +92,7 @@ class ProjectsController < ApplicationController
   end
   logger.info('update'){'Project updated'}
   
-  # DELETE /projects/1
+  # Destroy project
   def destroy
     @project.destroy
     redirect_to projects_url, notice: 'Project was successfully destroyed.'
