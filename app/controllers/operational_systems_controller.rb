@@ -9,26 +9,25 @@ logger = Logger.new('logfile.log')
 class OperationalSystemsController < ApplicationController
   before_action :set_operational_system, only: [:show, :edit, :update, :destroy]
 
-  # GET /operational_systems
+  # Impress all operating sistems
   def index
     @operational_systems = OperationalSystem.all
   end
 
-  # GET /operational_systems/1
   def show
   end
 
-  # GET /operational_systems/new
+  # Create new operating system
   def new
     @operational_system = OperationalSystem.new
   end
   logger.info('new'){'New operational system created'}
 
-  # GET /operational_systems/1/edit
   def edit
   end
 
-  # POST /operational_systems
+  # Create a new operational system, put message to user that sucess or redirect
+  # user to register again.
   def create
     @operational_system = OperationalSystem.new(operational_system_params)
 
@@ -42,7 +41,7 @@ class OperationalSystemsController < ApplicationController
   logger.info('create'){'New operational system created'}
   OperationalSystem.create(name: 'Ubuntu').valid?
 
-  # PATCH/PUT /operational_systems/1
+  # Update operating system data.
   def update
     if @operational_system.update(operational_system_params)
       redirect_to @operational_system, 
@@ -53,7 +52,7 @@ class OperationalSystemsController < ApplicationController
   end
   logger.info('update'){'Operational system updated'}
 
-  # DELETE /operational_systems/1
+  # Destroy operating system in data banc
   def destroy
     @operational_system.destroy
     redirect_to operational_systems_url, 
