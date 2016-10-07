@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   # Define if the user do login or not and her permmissions.
 
   def current_user
-    
+    # get user id if user have a register in FlossCoach 
     if session[:user_id]
       @current_user = User.find_by_id(session[:user_id]) #get user user_id.
     else
