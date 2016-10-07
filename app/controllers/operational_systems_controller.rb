@@ -11,6 +11,7 @@ class OperationalSystemsController < ApplicationController
 
   # Impress all operating sistems
   def index
+    # variable that receives all operational systems
     @operational_systems = OperationalSystem.all
   end
 
@@ -19,6 +20,7 @@ class OperationalSystemsController < ApplicationController
 
   # Create new operating system
   def new
+    # variable that will be used on view to create a new operational system
     @operational_system = OperationalSystem.new
   end
   logger.info('new'){'New operational system created'}
@@ -29,6 +31,7 @@ class OperationalSystemsController < ApplicationController
   # Create a new operational system, put message to user that sucess or redirect
   # user to register again.
   def create
+    # varaible tahat receives params from view to create a new operational system
     @operational_system = OperationalSystem.new(operational_system_params)
 
     if @operational_system.save

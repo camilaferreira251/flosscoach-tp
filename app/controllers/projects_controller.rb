@@ -14,6 +14,7 @@ class ProjectsController < ApplicationController
 
   # Impress all projects
   def index
+    # variable that receive all projects from search
     @projects = Project.all.search(params[:search])
     if current_user
       @myproject = current_user.projects.build # set project to current user project build
@@ -24,6 +25,7 @@ class ProjectsController < ApplicationController
 
   # Impress the project 
   def show
+    #variable that receive params from view
     @codigourl = params[:id]
     @language = Language.where(:id => @project.language_id).first
     @tool = Tool.where(:id => @project.tool_id).first
