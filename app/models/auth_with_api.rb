@@ -2,6 +2,7 @@ module ActiveResource #:nodoc:
   module Extend
     module AuthWithApi
       module ClassMethods
+        # this routine set element path with omniauth
         def element_path_with_auth(id, prefix_options = {}, query_options = nil)
           query_options.merge!({:token => self.api_key})
           element_path_without_auth(id, prefix_options, query_options)
@@ -12,6 +13,7 @@ module ActiveResource #:nodoc:
         end
       end
 
+      # this class routine set if base is included
       def self.included(base)
         base.class_eval do
           extend ClassMethods

@@ -18,7 +18,7 @@ class OpenHubProject < ActiveResource::Base
   self.element_name = "projects"
   
   @headers = { 'api_key' => ENV["OPENHUB_KEY"] }
-
+  #this routine find project by id
   def self.find_by_id(id)
     self.find(id, :params => {'api_key' => ENV["OPENHUB_KEY"]})
   end
