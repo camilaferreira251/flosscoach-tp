@@ -31,6 +31,7 @@ class ProjectsController < ApplicationController
     @language = Language.where(:id => @project.language_id).first
     #variable that receive first tool on db
     @tool = Tool.where(:id => @project.tool_id).first
+    assert(@tool.kind_of?(Tool))
     @operationalsystem = OperationalSystem.where(
       :id => @project.operational_system_id).first
   end

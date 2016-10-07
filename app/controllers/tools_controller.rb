@@ -32,6 +32,7 @@ class ToolsController < ApplicationController
   def create
     # set a new tool to be used on view
     @tool = Tool.new(tool_params)
+    assert(@tool.kind_of?(Tool))
     # if tool is saved redirect to tool
     # else render new form
     if @tool.save

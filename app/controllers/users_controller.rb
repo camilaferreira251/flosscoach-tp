@@ -34,6 +34,7 @@ class UsersController < ApplicationController
   # post action to create a user
   def create
     @user = User.new(user_params)
+    assert(@user.kind_of(User))
     @user.photo_url ||= '/assets/avatar.jpeg'
     # if user saved set session and redirect if not render new form
     if @user.save
