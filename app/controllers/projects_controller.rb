@@ -27,7 +27,9 @@ class ProjectsController < ApplicationController
   def show
     #variable that receive params from view
     @codigourl = params[:id]
+    #variable that receive first language on databse
     @language = Language.where(:id => @project.language_id).first
+    #variable that receive first tool on db
     @tool = Tool.where(:id => @project.tool_id).first
     @operationalsystem = OperationalSystem.where(
       :id => @project.operational_system_id).first
@@ -44,6 +46,7 @@ class ProjectsController < ApplicationController
 
   # Edit project
   def edit
+    #get param id from view
     @codigourl = params[:id]
     @language = Language.where(:id => @project.language_id).first
     @tool = Tool.where(:id => @project.tool_id).first
@@ -58,6 +61,7 @@ class ProjectsController < ApplicationController
     # If the flag pull of the openhug is on 
     if params[:openhub_check] 
       ohp = OpenHubProject.find_by_name(@project.name).first
+      #variable that receive abot for a project
       @project.about = "#{ohp.description} <br>
                        <iframe src='https://www.openhub.net/p/#{ohp.vanity_url}
                        /widgets/project_factoids_stats' 
@@ -70,6 +74,7 @@ class ProjectsController < ApplicationController
     else
       # nothing to do
     end
+    #varriable with a url
     @project.image_url ||= 'assets/placeholder.png' # set project image is exists to a .png
 
     if @project.save
