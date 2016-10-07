@@ -76,7 +76,7 @@ class ProjectsController < ApplicationController
     end
     #varriable with a url
     @project.image_url ||= 'assets/placeholder.png' # set project image is exists to a .png
-
+    # if save pass  redirect to project if not render again new form
     if @project.save
       redirect_to @project, notice: 'Project was successfully created.'
     else
@@ -87,6 +87,7 @@ class ProjectsController < ApplicationController
   
   # Update a project
   def update
+    # if project updated respond with a json if not render again edit
     if @project.update(project_params)
       #redirect_to @project, notice: 'Project was successfully updated.'
       respond_to do |format|
@@ -140,6 +141,7 @@ class ProjectsController < ApplicationController
 
       # User need login for create a new project.
     def authorize_project
+      # unless there is a currente user  redirect to root
       unless current_user
         redirect_to root_path, alert: 'You need to login to continue.' # redirect if not logged in
       end
