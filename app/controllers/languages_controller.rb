@@ -7,25 +7,25 @@ class LanguagesController < ApplicationController
   #assert language methods
   before_action :set_language, only: [:show, :edit, :update, :destroy]
 
-  # GET /languages
+  # index action to all languages
   def index
     @languages = Language.all
   end
 
-  # GET /languages/1
+  # action that does nothing
   def show
   end
 
-  # GET /languages/new
+  # action that set new language
   def new
     @language = Language.new
   end
 
-  # GET /languages/1/edit
+  # acton that does nothing
   def edit
   end
 
-  # POST /languages
+  # post that create language
   def create
     @language = Language.new(language_params)
     #Create a new language, put notice for user or user redirect user for 
@@ -39,7 +39,7 @@ class LanguagesController < ApplicationController
 
   Language.create(name: 'Ruby').valid?
 
-  # PATCH/PUT /languages/1
+  # patch action that update
   def update
     if @language.update(language_params)
       redirect_to @language, notice: 'Language was successfully updated.'
@@ -48,11 +48,11 @@ class LanguagesController < ApplicationController
     end
   end
 
-  private
-    def destroy
-      @language.destroy
-      redirect_to languages_url, notice: 'Language was successfully destroyed.'
-    end
+  # destroy action of language
+  def destroy
+    @language.destroy
+    redirect_to languages_url, notice: 'Language was successfully destroyed.'
+  end
 
   private
 
