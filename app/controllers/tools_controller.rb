@@ -32,7 +32,8 @@ class ToolsController < ApplicationController
   def create
     # set a new tool to be used on view
     @tool = Tool.new(tool_params)
-
+    # if tool is saved redirect to tool
+    # else render new form
     if @tool.save
       redirect_to @tool,
                   notice: 'Tool was successfully created.'
@@ -45,6 +46,8 @@ class ToolsController < ApplicationController
 
   # Update tool
   def update
+    #if tool is updated redirect to tool
+    #else render edit form
     if @tool.update(tool_params)
       redirect_to @tool, 
                   notice: 'Tool was successfully updated.'
