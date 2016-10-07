@@ -15,6 +15,8 @@ class LoginController < ApplicationController
 
   # Create new user login.
   def create
+    # Crete a new login user with email valid params or alert user that params
+    # are invalids. 
     user = User.find_by_email(params[:user][:email])
     if user && user.valid_password?(params[:user][:password])
       session[:user_id] = user.id
@@ -34,6 +36,8 @@ class LoginController < ApplicationController
   # Search of projects for the user.
   def search
     @projects = Project.search(params[:query])
+    # Search params of project that user puts or in case that not exist
+    # put user in idex page.
     if request.xhr?
       render :json => @projects.to_json
     else
