@@ -103,11 +103,11 @@ salvar_alteracao("description", $(this).text());
   });
   })();
 
-
+// this function alert if save
 function saveInsert(obj){
   alert("TODO");
 }
-
+// this funtion insert if theres a frame
 function insertIframe(obj){
       box = $(obj).parents(".grid-stack-item")
 

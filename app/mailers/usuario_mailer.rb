@@ -10,6 +10,7 @@ class UsuarioMailer < ApplicationMailer
   #
   #   en.usuario_mailer.newuser.subject
   #
+  #this routine mail to a user on app
   def newuser(user)
     @greeting = "Hi"
     @newuser = user
