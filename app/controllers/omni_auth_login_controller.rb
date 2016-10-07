@@ -16,7 +16,7 @@ class OmniAuthLoginController < ApplicationController
 
   def create
     auth = request.env['omniauth.auth']
-    user = User.find_or_create_with_omniauth(auth)
+    user = User.find_or_create_with_omniauth(auth) # try to find user if not create with omniauth
     session[:user_id] = user.id
     redirect_to projects_path
   end

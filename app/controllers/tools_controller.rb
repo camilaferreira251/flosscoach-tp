@@ -33,7 +33,7 @@ class ToolsController < ApplicationController
     @tool = Tool.new(tool_params)
 
     if @tool.save
-      redirect_to @tool, 
+      redirect_to @tool,
                   notice: 'Tool was successfully created.'
     else
       render :new

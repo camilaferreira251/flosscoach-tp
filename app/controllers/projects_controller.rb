@@ -16,7 +16,7 @@ class ProjectsController < ApplicationController
   def index
     @projects = Project.all.search(params[:search])
     if current_user
-      @myproject = current_user.projects.build
+      @myproject = current_user.projects.build # set project to current user project build
     else
       @myproject = Project.all.search('nenhum')
     end
@@ -68,7 +68,7 @@ class ProjectsController < ApplicationController
     else
       # nothing to do
     end
-    @project.image_url ||= 'assets/placeholder.png'
+    @project.image_url ||= 'assets/placeholder.png' # set project image is exists to a .png
 
     if @project.save
       redirect_to @project, notice: 'Project was successfully created.'
