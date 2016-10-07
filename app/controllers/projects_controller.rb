@@ -18,6 +18,7 @@ class ProjectsController < ApplicationController
     @projects = Project.all.search(params[:search])
     if current_user
       @myproject = current_user.projects.build # set project to current user project build
+      logger.info "project seted"
     else
       @myproject = Project.all.search('nenhum')
     end
@@ -79,8 +80,10 @@ class ProjectsController < ApplicationController
     @project.image_url ||= 'assets/placeholder.png' # set project image is exists to a .png
     # if save pass  redirect to project if not render again new form
     if @project.save
+      logger.info "project saved"
       redirect_to @project, notice: 'Project was successfully created.'
     else
+      logger.info "project not save"
       render :new
     end
   end
@@ -90,6 +93,7 @@ class ProjectsController < ApplicationController
   def update
     # if project updated respond with a json if not render again edit
     if @project.update(project_params)
+      logger.info "project updated"
       #redirect_to @project, notice: 'Project was successfully updated.'
       respond_to do |format|
         format.json { render :json => { :status => 'Ok', :message => 'Received'}, 
