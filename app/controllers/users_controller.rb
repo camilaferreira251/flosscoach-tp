@@ -35,6 +35,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.photo_url ||= '/assets/avatar.jpeg'
+    # if user saved set session and redirect if not render new form
     if @user.save
       #UsuarioMailer.newuser(@user).deliver
       session[:user_id] = @user.id
@@ -47,6 +48,7 @@ class UsersController < ApplicationController
 
   # patch action to update a user
   def update
+    #if user updated  respond with a json if not render edit
     if @user.update_attributes(user_params)
       respond_to do |format|
         format.json { render :json => { :status => 'Ok', :message => 'Received'}, :status => 200 }
