@@ -60,7 +60,7 @@
 //= require components/asscrollable
 
 
-
+  //this routine save any changes and alert
   function salvar_alteracao(campoid,campocod){
     var obj={}
     obj[campoid] = campocod

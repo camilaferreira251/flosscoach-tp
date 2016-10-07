@@ -54,7 +54,7 @@ salvar_alteracao("name", $(this).text());
 $(".description").on("summernote.change", function(e) {
 salvar_alteracao("description", $(this).text());
 });
-
+  // this routine toggle grid to be editable
   function toggleGridEditable(obj){
     // clear any active button if set before
     $.each($(".wb-edit"), function(index, btn_obj){
@@ -82,8 +82,7 @@ salvar_alteracao("description", $(this).text());
   }
   
 
-  // POPOVER DA INSERÇÃO
-  // ------------------------------------
+  // this anonymous function set popover of insertion
   (function() {
   var defaults = $.components.getDefaults("webuiPopover");
 
