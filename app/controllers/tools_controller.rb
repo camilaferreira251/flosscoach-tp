@@ -10,26 +10,25 @@ class ToolsController < ApplicationController
   #assert tools methods
   before_action :set_tool, only: [:show, :edit, :update, :destroy]
 
-  # GET /tools
+  # Impress all tools registred
   def index
     @tools = Tool.all
   end
 
-  # GET /tools/1
   def show
   end
 
-  # GET /tools/new
+  # Create a new tool
   def new
     @tool = Tool.new
   end
   logger.info('new'){'New tool created'}
 
-  # GET /tools/1/edit
   def edit
   end
 
-  # POST /tools
+  # Create tool, impress a sucess message or redirect user to register tool
+  # again.
   def create
     @tool = Tool.new(tool_params)
 
@@ -43,7 +42,7 @@ class ToolsController < ApplicationController
   logger.info('create'){'New tool created'}
   Tool.create(name: 'Rubocop').valid?
 
-  # PATCH/PUT /tools/1
+  # Update tool
   def update
     if @tool.update(tool_params)
       redirect_to @tool, 
@@ -54,6 +53,7 @@ class ToolsController < ApplicationController
   end
   logger.info('update'){'Toll updated'}
 
+  # Destroy tool in the data banc
   private
     def destroy
       @tool.destroy
