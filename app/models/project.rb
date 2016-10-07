@@ -4,6 +4,7 @@
 # GNU AGPLv3
 ########################################
 
+#this class defines a project and  his relation
 class Project < ActiveRecord::Base
 
   # Indicates project belongs to languages
