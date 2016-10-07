@@ -95,14 +95,14 @@ class ProjectsController < ApplicationController
   # Destroy project
   def destroy
     @project.destroy
-    redirect_to projects_url, notice: 'Project was successfully destroyed.'
+    redirect_to projects_url, notice: 'Project was successfully destroyed.' # redirect to projects url
   end
   logger.info('destroy'){'Project destroyed'}
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_project
-      @project = Project.all.find(params[:id])
+      @project = Project.all.find(params[:id]) # set project to id project
       #@project = current_user.projects.find(params[:id])
     end
 
@@ -134,7 +134,7 @@ class ProjectsController < ApplicationController
       # User need login for create a new project.
     def authorize_project
       unless current_user
-        redirect_to root_path, alert: 'You need to login to continue.'
+        redirect_to root_path, alert: 'You need to login to continue.' # redirect if not logged in
       end
     end
 end

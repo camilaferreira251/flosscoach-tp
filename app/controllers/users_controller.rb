@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @users = User.all
+    @users = User.all # set users to all on User table
   end
 
   # GET /users/new
