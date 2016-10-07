@@ -20,5 +20,6 @@ class UsuarioMailer < ApplicationMailer
     @link = "http://localhost:3000"
 
     mail to: @newuser.email, subject: "New user"
+    logger.info "mailed to newuser"
   end
 end

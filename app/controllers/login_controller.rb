@@ -21,6 +21,7 @@ class LoginController < ApplicationController
     assert(user.kind_of?(User))
     if user && user.valid_password?(params[:user][:password]) # check if user exists and if is a valid passoword
       session[:user_id] = user.id
+      logger.info "created user login"
       redirect_to projects_path
     else
       flash.now[:alert] = 'Invalid e-mail or password.'
@@ -32,6 +33,7 @@ class LoginController < ApplicationController
   def logout
     session.delete(:user_id)
     assert(session[:user_id] == nil)
+    logger.info "logged out"
     render action: 'index'
   end
 

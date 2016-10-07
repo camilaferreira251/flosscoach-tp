@@ -18,9 +18,10 @@ class ProjectsController < ApplicationController
     @projects = Project.all.search(params[:search])
     if current_user
       @myproject = current_user.projects.build # set project to current user project build
-      logger.info "project seted"
+      logger.info "project setted"
     else
       @myproject = Project.all.search('nenhum')
+      logger.info "no project"
     end
   end
 
@@ -35,6 +36,8 @@ class ProjectsController < ApplicationController
     assert(@tool.kind_of?(Tool))
     @operationalsystem = OperationalSystem.where(
       :id => @project.operational_system_id).first
+
+    logger.info "showed project"
   end
 
   # Create a new project
