@@ -1,3 +1,7 @@
+# Class to validade all params to user, register can be do with aplication
+# register, facebook, github and twitter, connecting whith yours respectives
+# API's. 
+
 require "bcrypt"
 
 class User < ActiveRecord::Base
@@ -34,8 +38,6 @@ class User < ActiveRecord::Base
 	def valid_password?(password_to_validate)
 		BCrypt::Password.new(encrypted_password) == password_to_validate
 	end
-
-
 
 
 	#TODO: Refactor
