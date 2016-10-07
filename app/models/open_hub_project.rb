@@ -1,7 +1,7 @@
 # Class with structure to use data of openhug API
 
 require 'active_resource'
-
+#this class is a XML formater that uses active resources
 class MyXMLFormatter
   include ActiveResource::Formats::XmlFormat
 
@@ -10,7 +10,7 @@ class MyXMLFormatter
   end
 end
 
-
+# this class defines an open hub project
 class OpenHubProject < ActiveResource::Base
 
   self.site = "https://www.openhub.net/"
