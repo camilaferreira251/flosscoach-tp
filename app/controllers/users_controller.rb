@@ -24,6 +24,7 @@ class UsersController < ApplicationController
   # form to create a user
   def newuser
     @user = User.new
+    logger.info "new user to view"
   end
 
   # form to edit a user
@@ -38,9 +39,12 @@ class UsersController < ApplicationController
     @user.photo_url ||= '/assets/avatar.jpeg'
     # if user saved set session and redirect if not render new form
     if @user.save
+      logger.info "created user"
       #UsuarioMailer.newuser(@user).deliver
       session[:user_id] = @user.id
+      
       redirect_to projects_path
+
       #redirect_to @user
     else
       render :new

@@ -38,6 +38,7 @@ class ToolsController < ApplicationController
     if @tool.save
       redirect_to @tool,
                   notice: 'Tool was successfully created.'
+      logger.info "new tool"
     else
       render :new
     end
@@ -52,6 +53,7 @@ class ToolsController < ApplicationController
     if @tool.update(tool_params)
       redirect_to @tool, 
                   notice: 'Tool was successfully updated.'
+      logger.info "tool updated"
     else
       render :edit
     end
