@@ -18,6 +18,7 @@ class LanguagesController < ApplicationController
 
   # action that set new language
   def new
+    # set a new language to be used on view
     @language = Language.new
   end
 
@@ -48,7 +49,7 @@ class LanguagesController < ApplicationController
     end
   end
 
-  # destroy action of language
+  # destroy action of languages
   def destroy
     @language.destroy
     redirect_to languages_url, notice: 'Language was successfully destroyed.'

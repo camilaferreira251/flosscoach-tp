@@ -30,6 +30,7 @@ class ToolsController < ApplicationController
   # Create tool, impress a sucess message or redirect user to register tool
   # again.
   def create
+    # set a new tool to be used on view
     @tool = Tool.new(tool_params)
 
     if @tool.save
