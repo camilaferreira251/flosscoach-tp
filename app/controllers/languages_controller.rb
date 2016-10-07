@@ -20,6 +20,7 @@ class LanguagesController < ApplicationController
   def new
     # set a new language to be used on view
     @language = Language.new
+    assert(@language.kind_of?(Language))
   end
 
   # acton that does nothing
@@ -29,6 +30,7 @@ class LanguagesController < ApplicationController
   # post that create language
   def create
     @language = Language.new(language_params)
+    assert(@language.kind_of?(Language))
     #Create a new language, put notice for user or user redirect user for 
     #register a new language in case language not saved.
     if @language.save
