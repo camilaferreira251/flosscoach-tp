@@ -1,3 +1,5 @@
+# Class with structure to use data of openhug API
+
 require 'active_resource'
 
 class MyXMLFormatter
