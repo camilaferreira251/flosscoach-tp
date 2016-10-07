@@ -12,26 +12,26 @@ class UsersController < ApplicationController
   # Validate token if user are updated
   skip_before_filter :verify_authenticity_token, only: [:update]
 
-  # GET /users
+  # impress all users
   def index
     redirect_to user_path(current_user)
   end
-
+  # impress all users
   def show
     @users = User.all # set users to all on User table
   end
 
-  # GET /users/new
+  # form to create a user
   def newuser
     @user = User.new
   end
 
-  # GET /users/1/edit
+  # form to edit a user
   def edit
     @user = User.update
   end
 
-  # POST /users
+  # post action to create a user
   def create
     @user = User.new(user_params)
     @user.photo_url ||= '/assets/avatar.jpeg'
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /users/1
+  # patch action to update a user
   def update
     if @user.update_attributes(user_params)
       respond_to do |format|
@@ -56,11 +56,12 @@ class UsersController < ApplicationController
     end
   end
 
-  private
-    def destroy
-      @user.destroy
-      redirect_to users_url, notice: 'User was successfully destroyed.'
-    end
+
+  # destroy user
+  def destroy
+    @user.destroy
+    redirect_to users_url, notice: 'User was successfully destroyed.'
+  end
 
   private
 
