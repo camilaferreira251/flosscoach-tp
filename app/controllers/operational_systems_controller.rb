@@ -33,7 +33,7 @@ class OperationalSystemsController < ApplicationController
   def create
     # varaible tahat receives params from view to create a new operational system
     @operational_system = OperationalSystem.new(operational_system_params)
-
+    assert(@user.kind_of(OperationalSystem))
     if @operational_system.save
       redirect_to @operational_system, 
       notice: 'Operational system was successfully created.'
