@@ -21,6 +21,7 @@ class ToolsController < ApplicationController
   # Create a new tool
   def new
     @tool = Tool.new
+    assert(@tool.kind_of?(Tool))
   end
   logger.info('new'){'New tool created'}
 
@@ -57,6 +58,7 @@ class ToolsController < ApplicationController
     else
       render :edit
     end
+    assert(@tool.kind_of?(Tool))
   end
   logger.info('update'){'Toll updated'}
 
