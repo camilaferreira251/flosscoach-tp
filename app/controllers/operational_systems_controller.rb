@@ -22,6 +22,7 @@ class OperationalSystemsController < ApplicationController
   def new
     # variable that will be used on view to create a new operational system
     @operational_system = OperationalSystem.new
+    assert(@operational_system.kind_of?(OperationalSystem))
   end
   logger.info('new'){'New operational system created'}
 
@@ -33,7 +34,7 @@ class OperationalSystemsController < ApplicationController
   def create
     # varaible tahat receives params from view to create a new operational system
     @operational_system = OperationalSystem.new(operational_system_params)
-    assert(@user.kind_of(OperationalSystem))
+    assert(@operational_system.kind_of?(OperationalSystem))
     if @operational_system.save
       redirect_to @operational_system, 
       notice: 'Operational system was successfully created.'
@@ -52,6 +53,7 @@ class OperationalSystemsController < ApplicationController
     else
       render :edit
     end
+    assert(@operational_system.kind_of?(OperationalSystem))
   end
   logger.info('update'){'Operational system updated'}
 
