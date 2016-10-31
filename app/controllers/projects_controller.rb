@@ -25,13 +25,13 @@ class ProjectsController < ApplicationController
     end
   end
 
-  # Impress the project 
+  # Impress the project
   def show
-    #variable that receive params from view
+    # variable that receive params from view
     @codigourl = params[:id]
-    #variable that receive first language on databse
+    # variable that receive first language on databse
     @language = Language.where(:id => @project.language_id).first
-    #variable that receive first tool on db
+    # variable that receive first tool on db
     @tool = Tool.where(:id => @project.tool_id).first
     assert(@tool.kind_of?(Tool))
     @operationalsystem = OperationalSystem.where(
@@ -51,7 +51,7 @@ class ProjectsController < ApplicationController
 
   # Edit project
   def edit
-    #get param id from view
+    # get param id from view
     @codigourl = params[:id]
     @language = Language.where(:id => @project.language_id).first
     @tool = Tool.where(:id => @project.tool_id).first
@@ -79,7 +79,7 @@ class ProjectsController < ApplicationController
     else
       # nothing to do
     end
-    #varriable with a url
+    # varriable with a url
     @project.image_url ||= 'assets/placeholder.png' # set project image is exists to a .png
     # if save pass  redirect to project if not render again new form
     if @project.save
@@ -91,7 +91,6 @@ class ProjectsController < ApplicationController
     end
   end
   logger.info('create'){'New project created'}
-  
   # Update a project
   def update
     # if project updated respond with a json if not render again edit
@@ -107,7 +106,6 @@ class ProjectsController < ApplicationController
     end
   end
   logger.info('update'){'Project updated'}
-  
   # Destroy project
   def destroy
     @project.destroy

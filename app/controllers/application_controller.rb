@@ -9,11 +9,11 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   def assert(condition)
-   if(condition)
-     # nothing to do
-   else
-     raise_not_found!
-   end
+  if(condition)
+    # nothing to do
+  else
+    raise_not_found!
+  end
   end
 
   private
@@ -21,14 +21,12 @@ class ApplicationController < ActionController::Base
   # Define if the user do login or not and her permmissions.
   # set current user if does not exist
   def current_user
-    # get user id if user have a register in FlossCoach 
+    # get user id if user have a register in FlossCoach
     if session[:user_id]
-      @current_user = User.find_by_id(session[:user_id]) #get user user_id.
+      @current_user = User.find_by_id(session[:user_id]) # get user user_id.
     else
-      #nothing to do.
+      # nothing to do.
     end
   end
-  
   helper_method :current_user
-  
 end

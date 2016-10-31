@@ -4,7 +4,7 @@
 # GNU AGPLv3
 ########################################
 class LanguagesController < ApplicationController
-  #assert language methods
+  # assert language methods
   before_action :set_language, only: [:show, :edit, :update, :destroy]
 
   # index action to all languages
@@ -31,8 +31,8 @@ class LanguagesController < ApplicationController
   def create
     @language = Language.new(language_params)
     assert(@language.kind_of?(Language))
-    #Create a new language, put notice for user or user redirect user for 
-    #register a new language in case language not saved.
+    # Create a new language, put notice for user or user redirect user for 
+    # register a new language in case language not saved.
     if @language.save
       redirect_to @language, notice: 'Language was successfully created.'
     else
@@ -59,14 +59,14 @@ class LanguagesController < ApplicationController
 
   private
 
-    # Use callbacks to share common setup or constraints between actions.
-    def set_language
-      @language = Language.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_language
+    @language = Language.find(params[:id])
+  end
 
-        # Only allow a trusted parameter 'white list' through.
-    def language_params
-      @name = 'language' # Name of the language
-      params.require(:language).permit(:name) # define params of language.
-    end
+  # Only allow a trusted parameter 'white list' through.
+  def language_params
+    @name = 'language' # Name of the language
+    params.require(:language).permit(:name) # define params of language.
+  end
 end

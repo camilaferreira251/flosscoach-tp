@@ -48,7 +48,7 @@ class OperationalSystemsController < ApplicationController
   # Update operating system data.
   def update
     if @operational_system.update(operational_system_params)
-      redirect_to @operational_system, 
+      redirect_to @operational_system,
       notice: 'Operational system was successfully updated.'
     else
       render :edit
@@ -66,13 +66,14 @@ class OperationalSystemsController < ApplicationController
   logger.info('destroy'){'Operational system destroyed'}
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_operational_system
-      @operational_system = OperationalSystem.find(params[:id])
-    end
 
-    # Only allow a trusted parameter 'white list' through.
-    def operational_system_params
-      params.require(:operational_system).permit(:name)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_operational_system
+    @operational_system = OperationalSystem.find(params[:id])
+  end
+
+  # Only allow a trusted parameter 'white list' through.
+  def operational_system_params
+    params.require(:operational_system).permit(:name)
+  end
 end

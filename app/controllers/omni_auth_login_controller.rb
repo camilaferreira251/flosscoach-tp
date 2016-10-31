@@ -5,7 +5,7 @@
 ########################################
 class OmniAuthLoginController < ApplicationController
   def index
-    #if there is a current user redirect to projects else nothing
+    # if there is a current user redirect to projects else nothing
     if current_user
       redirect_to projects_path
     else
